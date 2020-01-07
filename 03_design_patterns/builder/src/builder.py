@@ -1,3 +1,5 @@
+import abc
+
 # Director
 class HouseDirector:
     def __init__(self):
@@ -9,13 +11,15 @@ class HouseDirector:
         self.builder.buildDoor()
 
 # Abstract Builder
-class Builder:
+class Builder(metaclass=abc.ABCMeta):
     def __init__(self):
         self.house = House()
 
+    @abc.abstractmethod
     def buildWall(self):
         raise Exception("Abstract Class: Please Implement!")
 
+    @abc.abstractmethod
     def buildDoor(self):
         raise Exception("Abstract Class: Please Implement!")
 
