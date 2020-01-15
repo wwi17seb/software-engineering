@@ -1,4 +1,4 @@
-from actuators import Actuator
+from .actuator import Actuator
 
 
 class RGBLight(Actuator):
