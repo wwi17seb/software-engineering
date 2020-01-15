@@ -11,8 +11,8 @@ COLOR_MAP = {
 
 class ColorSetter(Sensor):
 
-    def __init__(self, name):
-        Sensor.__init__(self, name)
+    def __init__(self, name, room):
+        Sensor.__init__(self, name, room)
 
     def readValue(self):
         # value gets injected by command line
@@ -26,4 +26,5 @@ class ColorSetter(Sensor):
             self.value = "#000000"
 
     def __str__(self):
-        return str(self.name) + " (ColorSetter): " + str(self.value)
+        return str(self.name) + " (ColorSetter, " + str(self.room) + \
+            "): " + str(self.value)

@@ -3,8 +3,8 @@ from .actuator import Actuator
 
 class Shutter(Actuator):
 
-    def __init__(self, name, maxDimoutLevel=100):
-        Actuator.__init__(self, name)
+    def __init__(self, name, room, maxDimoutLevel=100):
+        Actuator.__init__(self, name, room)
         self.dimoutevel = 0
         self.maxDimoutLevel = maxDimoutLevel
 
@@ -24,5 +24,6 @@ class Shutter(Actuator):
         self.dimoutLevel = max(0, min(level, self.maxDimoutLevel))
 
     def __str__(self):
-        return str(self.name) + " (Shutter): " + \
-            str(round(100*self.dimoutLevel/self.maxDimoutLevel)) + "% dimout"
+        return str(self.name) + " (Shutter, " + str(self.room) + \
+            "): " + str(round(100*self.dimoutLevel /
+                              self.maxDimoutLevel)) + "% dimout"

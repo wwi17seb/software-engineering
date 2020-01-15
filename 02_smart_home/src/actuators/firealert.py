@@ -3,8 +3,8 @@ from .actuator import Actuator
 
 class FireAlert(Actuator):
 
-    def __init__(self, name):
-        Actuator.__init__(self, name)
+    def __init__(self, name, room):
+        Actuator.__init__(self, name, room)
         self.state = False
 
     def turnOff(self):
@@ -15,4 +15,5 @@ class FireAlert(Actuator):
         print("SHIT'S ON FIRE; YO!")
 
     def __str__(self):
-        return str(self.name) + " (FireAlert): " + str(self.state)
+        return str(self.name) + " (FireAlert, " + str(self.room) + \
+            "): " + str(self.state)

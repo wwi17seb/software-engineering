@@ -3,8 +3,8 @@ from .sensor import Sensor
 
 class SmokeDetector(Sensor):
 
-    def __init__(self, name):
-        Sensor.__init__(self, name)
+    def __init__(self, name, room):
+        Sensor.__init__(self, name, room)
 
     def readValue(self):
         # value gets injected by command line
@@ -14,4 +14,5 @@ class SmokeDetector(Sensor):
             self.value = False
 
     def __str__(self):
-        return str(self.name) + " (SmokeDetector): " + str(self.value)
+        return str(self.name) + " (SmokeDetector, " + str(self.room) + \
+            "): " + str(self.value)

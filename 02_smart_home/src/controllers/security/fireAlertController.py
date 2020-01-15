@@ -13,7 +13,8 @@ class FireAlertController:
     def main(self):
         smokeDetectorValue = self.smokeDetector.getValue()
         temperature = self.temperatureSensor.getValue()
-        if (smokeDetectorValue is True or temperature >= 50):
+        if (smokeDetectorValue is True or
+                (type(temperature) == int and temperature >= 50)):
             self.firealert.turnOn()
         else:
             self.firealert.turnOff()

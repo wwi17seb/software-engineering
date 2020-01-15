@@ -3,8 +3,8 @@ from .actuator import Actuator
 
 class Heating(Actuator):
 
-    def __init__(self, name, maxLevel=5):
-        Actuator.__init__(self, name)
+    def __init__(self, name, room, maxLevel=5):
+        Actuator.__init__(self, name, room)
         self.level = 0
         self.maxLevel = maxLevel
 
@@ -24,4 +24,5 @@ class Heating(Actuator):
         self.level = max(0, min(level, self.maxLevel))
 
     def __str__(self):
-        return str(self.name) + " (Heating): " + str(self.level) + "/" + str(self.maxLevel)
+        return str(self.name) + " (Heating, " + str(self.room) + \
+            "): " + str(self.level) + "/" + str(self.maxLevel)

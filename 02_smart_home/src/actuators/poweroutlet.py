@@ -3,8 +3,8 @@ from .actuator import Actuator
 
 class PowerOutlet(Actuator):
 
-    def __init__(self, name):
-        Actuator.__init__(self, name)
+    def __init__(self, name, room):
+        Actuator.__init__(self, name, room)
         self.state = False
 
     def turnOff(self):

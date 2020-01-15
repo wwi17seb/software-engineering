@@ -1,3 +1,5 @@
+from room import Room
+
 from actuators.actuator import Actuator
 from actuators.firealert import FireAlert
 from actuators.fridge import Fridge
@@ -30,44 +32,50 @@ COMMAND_ACTUATORS = ["a", "actuator", "actuators"]
 
 class SmartHome:
     def __init__(self):
+        # create rooms
+        self.livingRoom = Room("Living Room")
+        self.kitchen = Room("Kitchen")
+        self.bedroom = Room("Bedroom")
+        self.bathroom = Room("Bathroom")
+
         # items are stored in a dictionary, names are NOT case-sensitive
         self.items = {}
         self.controllers = []
 
         # create sensors and actuators
-        self.addItem(Lightswitch("lightswitchBathroom"))
-        self.addItem(WhiteLight("whiteLightBathroom"))
-        self.addItem(Lightswitch("lightswitchBedroom"))
-        self.addItem(ColorSetter("colorSetterBedroom"))
-        self.addItem(RGBLight("rgbLightBedroom"))
+        self.addItem(Lightswitch("lsbath1", self.bathroom))
+        self.addItem(WhiteLight("wlbath1", self.bathroom))
+        self.addItem(Lightswitch("lsbed1", self.bedroom))
+        self.addItem(ColorSetter("csbed1", self.bedroom))
+        self.addItem(RGBLight("rgblbed1", self.bedroom))
 
-        self.addItem(TemperatureSensor("temperatureSensorLivingRoom"))
-        self.addItem(Heating("heatingLivingRoom"))
-        self.addItem(SmokeDetector("smokeDetectorLivingRoom"))
-        self.addItem(FireAlert("fireAlertHouse"))
+        self.addItem(TemperatureSensor("tsliving1", self.livingRoom))
+        self.addItem(Heating("hliving1", self.livingRoom))
+        self.addItem(SmokeDetector("sdliving1", self.livingRoom))
+        self.addItem(FireAlert("fahouse1", None))
 
-        self.addItem(Microphone("wife"))
+        self.addItem(Microphone("wife", self.kitchen))
 
         # create controllers
         self.controllers.append(WhiteLightController(
-            self.getItemByName("lightswitchBathroom"),
-            self.getItemByName("whiteLightBathroom")
+            self.getItemByName("lsbath1"),
+            self.getItemByName("wlbath1")
         ))
         self.controllers.append(RGBLightController(
-            self.getItemByName("lightswitchBedroom"),
-            self.getItemByName("colorSetterBedroom"),
-            self.getItemByName("rgbLightBedroom")
+            self.getItemByName("lsbed1"),
+            self.getItemByName("csbed1"),
+            self.getItemByName("rgblbed1")
         ))
 
         self.controllers.append(HeatingController(
-            self.getItemByName("temperatureSensorLivingRoom"),
-            self.getItemByName("heatingLivingRoom")
+            self.getItemByName("tsliving1"),
+            self.getItemByName("hliving1")
         ))
 
         self.controllers.append(FireAlertController(
-            self.getItemByName("smokeDetectorLivingRoom"),
-            self.getItemByName("temperatureSensorLivingRoom"),
-            self.getItemByName("fireAlertHouse")
+            self.getItemByName("sdliving1"),
+            self.getItemByName("tsliving1"),
+            self.getItemByName("fahouse1")
         ))
 
         self.controllers.append(VoiceAssistant(

@@ -3,8 +3,8 @@ from .actuator import Actuator
 
 class Fridge(Actuator):
 
-    def __init__(self, name, minLevel=-2, maxLevel=7, unit="°C"):
-        Actuator.__init__(self, name)
+    def __init__(self, name, room, minLevel=-2, maxLevel=7, unit="°C"):
+        Actuator.__init__(self, name, room)
         self.level = None
         self.minLevel = minLevel
         self.maxLevel = maxLevel
@@ -38,6 +38,7 @@ class Fridge(Actuator):
         self.level = max(0, min(level, self.maxLevel))
 
     def __str__(self):
-        return str(self.name) + " (Fridge): " + str(self.level) + \
-            "(Range: " + str(self.minLevel) + " " + str(self.unit) + " to " + \
-            str(self.maxLevel) + " " + str(self.unit) + ")"
+        return str(self.name) + " (Fridge, " + str(self.room) + \
+            "): " + str(self.level) + "(Range: " + str(self.minLevel) + " " + \
+            str(self.unit) + " to " + str(self.maxLevel) + \
+            " " + str(self.unit) + ")"

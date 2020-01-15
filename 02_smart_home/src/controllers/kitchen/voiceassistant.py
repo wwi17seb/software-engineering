@@ -23,8 +23,9 @@ class VoiceAssistant:
         elif (voiceInput.lower() == "switch kitchen lights off"):
             for itemName in self.smartHome.getAllItemNames():
                 currentItem = self.smartHome.getItemByName(itemName)
-                if(isinstance(currentItem, rgblight.RGBLight) or
-                   isinstance(currentItem, whitelight.WhiteLight)):
+                if(currentItem.room == self.smartHome.kitchen and
+                   (isinstance(currentItem, rgblight.RGBLight) or
+                        isinstance(currentItem, whitelight.WhiteLight))):
                     currentItem.turnOff()
         else:
             print("I can't do this yet.")

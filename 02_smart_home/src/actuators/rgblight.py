@@ -3,8 +3,8 @@ from .actuator import Actuator
 
 class RGBLight(Actuator):
 
-    def __init__(self, name):
-        Actuator.__init__(self, name)
+    def __init__(self, name, room):
+        Actuator.__init__(self, name, room)
         self.state = False
         self.red = 0
         self.green = 0
@@ -25,4 +25,6 @@ class RGBLight(Actuator):
         self.blue = blue
 
     def __str__(self):
-        return str(self.name) + " (RGBLight): " + str(self.state) + " (" + str(self.red) + ", " + str(self.green) + ", " + str(self.blue) + ")"
+        return str(self.name) + " (RGBLight, " + str(self.room) + \
+            "): " + str(self.state) + " (" + str(self.red) + ", " + \
+            str(self.green) + ", " + str(self.blue) + ")"
