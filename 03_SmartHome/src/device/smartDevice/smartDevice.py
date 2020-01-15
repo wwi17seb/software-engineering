@@ -1,6 +1,6 @@
 from __future__ import annotations
 from abc import abstractmethod
-from abstractDevice import AbstractDevice
+from ..abstractDevice import AbstractDevice
 
 class SmartDevice(AbstractDevice):
 
@@ -9,5 +9,5 @@ class SmartDevice(AbstractDevice):
         pass
 
     @abstractmethod
-    def exectuteCommand(self):
+    def exectuteCommand(self, command):
         pass

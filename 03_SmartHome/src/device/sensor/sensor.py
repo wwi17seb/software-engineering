@@ -1,6 +1,7 @@
 from __future__ import annotations
 from abc import abstractmethod
-from abstractDevice import AbstractDevice
+from ..abstractDevice import AbstractDevice
+
 
 class Sensor(AbstractDevice):
 
@@ -10,7 +11,7 @@ class Sensor(AbstractDevice):
         self.trigger = trigger
 
     @abstractmethod
-    def mesure(self):
+    def measure(self):
         pass
 
     @abstractmethod

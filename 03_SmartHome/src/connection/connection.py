@@ -16,5 +16,5 @@ class Connection(ABC):
         pass
 
     @abstractmethod
-    def checkCompatiblity(self, device):
+    def checkCompatibility(self, device):
         pass

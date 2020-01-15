@@ -1,6 +1,6 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
-from abstractDevice import AbstractDevice
+from ..abstractDevice import AbstractDevice
 
 class ControllDevice(AbstractDevice):
 
