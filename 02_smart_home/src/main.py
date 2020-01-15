@@ -1,10 +1,16 @@
 from actuators.actuator import Actuator
 from actuators.whitelight import WhiteLight
 from actuators.rgblight import RGBLight
+from actuators.heating import Heating
+
 from sensors.sensor import Sensor
 from sensors.lightswitch import Lightswitch
+from sensors.colorsetter import ColorSetter
+from sensors.temperaturesensor import TemperatureSensor
+
 from controllers.rgblightcontroller import RGBLightController
 from controllers.whitelightcontroller import WhiteLightController
+from controllers.heatingcontroller import HeatingController
 
 
 COMMAND_EXIT       = "exit"
@@ -19,15 +25,31 @@ class SmartHome:
         self.items = {}
         self.controllers = []
 
+        # create sensors and actuators
         self.addItem(Lightswitch("lightswitchBathroom"))
         self.addItem(WhiteLight("whiteLightBathroom"))
         self.addItem(Lightswitch("lightswitchBedroom"))
+        self.addItem(ColorSetter("colorSetterBedroom"))
         self.addItem(RGBLight("rgbLightBedroom"))
 
+        self.addItem(TemperatureSensor("temperatureSensorLivingRoom"))
+        self.addItem(Heating("heatingLivingRoom"))
+
+        # create controllers
         self.controllers.append(WhiteLightController(
-            self.getItemByName("lightswitchBathroom"), self.getItemByName("whiteLightBathroom")))
+            self.getItemByName("lightswitchBathroom"),
+            self.getItemByName("whiteLightBathroom")
+        ))
         self.controllers.append(RGBLightController(
-            self.getItemByName("lightswitchBedroom"), self.getItemByName("rgbLightBedroom")))
+            self.getItemByName("lightswitchBedroom"),
+            self.getItemByName("colorSetterBedroom"),
+            self.getItemByName("rgbLightBedroom")
+        ))
+
+        self.controllers.append(HeatingController(
+            self.getItemByName("temperatureSensorLivingRoom"),
+            self.getItemByName("heatingLivingRoom")
+        ))
 
     def addItem(self, item):
         self.items[item.name.lower()] = item
