@@ -3,7 +3,8 @@ import abc
 
 class Sensor(metaclass=abc.ABCMeta):
 
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         self.value = None
 
     def getValue(self):

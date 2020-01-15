@@ -3,10 +3,9 @@ from .actuator import Actuator
 
 class WhiteLight(Actuator):
 
-    def __init__(self):
-        Actuator.__init__(self)
+    def __init__(self, name):
+        Actuator.__init__(self, name)
         self.state = False
-        print("Created a new white light.")
 
     def turnOn(self):
         self.state = True
@@ -17,6 +16,9 @@ class WhiteLight(Actuator):
     def toggleLight(self):
         self.state = not self.state
 
+    def __str__(self):
+        return str(self.name) + " (WhiteLight): " + str(self.state)
+
 
 if __name__ == "__main__":
-    whiteLight = WhiteLight()
+    whiteLight = WhiteLight("testLight")

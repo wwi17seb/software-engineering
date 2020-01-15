@@ -4,8 +4,14 @@ from sensors.lightswitch import Lightswitch
 
 class RGBLightController:
     def __init__(self, switch, light):
-        self.Lightswitch = switch
-        self.RGBLight = light
+        self.lightswitch = switch
+        self.rgbLight = light
 
     def main(self):
-        print("RGBLightcontroller created.")
+        lightswitchValue = self.lightswitch.getValue()
+        if (lightswitchValue == True):
+            self.rgbLight.turnOn()
+        elif (lightswitchValue == False):
+            self.rgbLight.turnOff()
+        
+        # TODO: colors
