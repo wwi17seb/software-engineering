@@ -7,6 +7,7 @@ class Oven(Actuator):
         Actuator.__init__(self, name, room)
         self.temp = 0
         self.maxTemp = maxTemp
+        self.unit = unit
 
     def turnOff(self):
         self.temp = 0

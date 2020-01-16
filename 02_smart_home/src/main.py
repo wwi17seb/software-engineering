@@ -54,6 +54,7 @@ class SmartHome:
         self.addItem(SmokeDetector("sdliving1", self.livingRoom))
         self.addItem(FireAlert("fahouse1", None))
 
+        self.addItem(Oven("okitchen1", self.kitchen))
         self.addItem(Microphone("wife", self.kitchen))
 
         # create controllers

@@ -18,8 +18,15 @@ class VoiceAssistant:
             print("- heat oven to ...")
             print("- switch kitchen lights off")
         elif (voiceInput.lower().startswith("heat oven to")):
-            # TODO: split string etc.
-            pass
+            temperature = voiceInput[len("heat oven to "):].split()[0]
+            if (temperature.isdigit()):
+                temperature = int(temperature)
+                oven = self.smartHome.getItemByName("okitchen1")
+                oven.setTemp(temperature)
+                if (temperature > oven.maxTemp):
+                    print("Oh honey, how often did I told you that I can heat the oven only to " + str(oven.maxTemp) + " " + str(oven.unit) + "?")
+            else:
+                print("I don't know what you mean, I can't heat the oven to", temperature)
         elif (voiceInput.lower() == "switch kitchen lights off"):
             for itemName in self.smartHome.getAllItemNames():
                 currentItem = self.smartHome.getItemByName(itemName)
