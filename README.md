@@ -8,7 +8,7 @@
 # SOLID-Prinzipien
 * [Single responsibility principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/01_srp/presentations/SRP%20-%20The%20Single%20Responsibility%20Principle.pdf)
 * [Open–closed principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe5/Open-closed%20Principle.pdf)
-* [Liskov substitution principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/LSP.pptx)
+* [Liskov substitution principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/LSP.pdf)
 * [Interface segregation principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/01_SOLID-Prinzipien/SOLID-Prinzipien_ISP.pdf)
 * [Dependency inversion principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/01_DIP/DIP.pptx)
 
@@ -17,12 +17,12 @@
 * [Abstract factory](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/02_Abstract_Factory/AbstractFactory.pptx)
 * [Builder](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/builder/presentations/builder.pdf)
 * [Factory method](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/03_DesignPattern_FactoryMethod/DesignPattern_FactoryMethod.pdf)
-* [Prototype](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/Prototype%20Design%20Pattern/Prototype%20Design%20Pattern.pptx)
+* [Prototype](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/Prototype%20Design%20Pattern/Prototype%20Design%20Pattern.pdf)
 * Singleton
 
 ## Structural patterns
 * Adapter
-* Bridge
+* [Bridge](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/Bridge%20Pattern/Bridge%20Pattern.pdf)
 * Composite
 * [Decorator](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/05_DesignPattern-Decorator/Design%20Pattern%20Decorator.pdf)
 * Facade
@@ -39,5 +39,5 @@
 * Observer
 * State
 * Strategy
-* Template method
+* [Template Method](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/Template%20Method%20Pattern/Template%20Method%20Pattern.pdf)
 * Visitor
