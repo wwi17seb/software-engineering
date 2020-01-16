@@ -24,9 +24,11 @@ class VoiceAssistant:
                 oven = self.smartHome.getItemByName("okitchen1")
                 oven.setTemp(temperature)
                 if (temperature > oven.maxTemp):
-                    print("Oh honey, how often did I told you that I can heat the oven only to " + str(oven.maxTemp) + " " + str(oven.unit) + "?")
+                    print("Oh honey, how often did I tell you that the oven can only reach " +
+                          str(oven.maxTemp) + " " + str(oven.unit) + "?")
             else:
-                print("I don't know what you mean, I can't heat the oven to", temperature)
+                print(
+                    "I don't know what you mean, I can't heat the oven to", temperature)
         elif (voiceInput.lower() == "switch kitchen lights off"):
             for itemName in self.smartHome.getAllItemNames():
                 currentItem = self.smartHome.getItemByName(itemName)
