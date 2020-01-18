@@ -1,5 +1,3 @@
-from abc import ABC, abstractmethod
-
 class IController:
     def __init__(self,name):
         self.status=0

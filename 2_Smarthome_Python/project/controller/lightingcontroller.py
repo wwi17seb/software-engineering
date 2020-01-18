@@ -1,6 +1,6 @@
 from .icontroller import IController
-from lighting.lamp import Lamp
-from lighting.shutter import Shutter
+from smartdevices.lighting.lamp import Lamp
+from smartdevices.lighting.shutter import Shutter
 
 class LightingController(IController):
     def __init__(self):
@@ -11,10 +11,12 @@ class LightingController(IController):
     def addLamp(self, room):
         lamp = Lamp(room)
         self.lamps.append(lamp)
+        room.smartdevices.append(lamp)
 
     def addShutter(self, room):
         shutter = Shutter(room)
         self.shutters.append(shutter)
+        room.smartdevices.append(shutter)
 
     def lightRoom(self,room):
         if self.status==1:

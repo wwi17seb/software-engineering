@@ -1,12 +1,9 @@
-import itertools
+from ..smartdevice import SmartDevice
 
-class Shutter:
-    newId = itertools.count()
+class Shutter(SmartDevice):
     def __init__(self,room):
-        self.ShutterId = next(self.newId)
+        SmartDevice.__init__(self,room)
         room.addLsensor()
-        self.room=room
-        self.state=1
 
     def open(self):
         print("Aktuelle Helligkeit in Raum: ",self.room.name, " beträgt: ", self.room.lsensor.getData())

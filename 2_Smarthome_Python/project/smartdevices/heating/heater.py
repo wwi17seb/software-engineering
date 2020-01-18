@@ -1,17 +1,21 @@
-import itertools
+from ..smartdevice import SmartDevice
 
-class Heater:
-    newId = itertools.count()
+class Heater(SmartDevice):
     def __init__(self,room):
-        self.HeaterId = next(self.newId)
+        SmartDevice.__init__(self,room)
         room.addHsensor()
-        self.room=room
 
 
     def heat(self,target):
         print("Der Raum: ",self.room.name," hat aktuell ",self.room.hsensor.getData(), " Grad Celsius")
 
         if target > self.room.hsensor.getData():
+            self.state=1
             print("Ich beginne auf ", target, " zu heizen.")
         else:
+            self.state=0
             print("Die Zieltemperatur liegt unter der Raumtemperatur.")
+
+    def stopHeating(self):
+        self.state=0
+        print("Heizung ausgeschaltet")

@@ -10,6 +10,7 @@ class Room:
         self.name=name
         self.hsensor=None
         self.lsensor=None
+        self.smartdevices=[]
 
     def addHsensor(self):
         if self.hsensor == None:
