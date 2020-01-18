@@ -17,4 +17,6 @@ class RGBLightController:
             self.rgbLight.turnOff()
         
         colorValue = self.colorSetter.getValue()
-        # TODO: colors
+        self.rgbLight.red = int(colorValue[1:3], 16)
+        self.rgbLight.green = int(colorValue[3:5], 16)
+        self.rgbLight.blue = int(colorValue[5:7], 16)
