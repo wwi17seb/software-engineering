@@ -6,12 +6,24 @@ A controller reads data of all sensors it needs and then controls the actuators.
 All sensors and actuators have a name and are assigned to a room.
 They get instanciated in the main class and can be controlled by the CLI.
 
-Controllers are packaged by use cases, e.g. there is one for basic operations (lights, heating, ...), one for kitchen, security (alarms), ...
+Controllers are packaged by use cases, e.g. there is one package for basic operations (lights, heating, ...), one for kitchen, security (alarms), ...
 
-**TODO**:
+**PROBLEM**:
 There needs to be a decision how to handle actuators which are normally controlled by sensors but can also be controlled directly/manually (e.g. Voice Assitant, Smartphone App).
-Example: Based on the temperature sensor (22°C) the controller would decide to set heating to level 2.
+Example: Based on the temperature sensor (22 °C) the controller would decide to set heating to level 2.
 The heating is set to level 4 by Voice Assistant.
 How should the controller handle this situation?
 
-**TODO**: Should there be a class `Item` from which `Sensor` and `Actuator` can inherit?
+Possible solution:
+Actuators have a flag whether they should be controlled automatically (by sensors / controllers) or whether they are set manually.
+Actuators can be set back to 'auto' manually or there needs to be a way to automatically switch them back.
+That would mean that controllers need to check whether an actuator is set manually and may decide to override it back to 'auto' based on several conditions (time since override, significant environmental/sensor changes, ...).
+
+**QUESTION**:
+Should there be a class `Item` from which `Sensor` and `Actuator` can inherit?
+It could be also a good idea to have a class `Controller` from which the concrete controllers can inherit.
+
+**IDEA**:
+Make `value` of `Sensor` private and implement `setValue()`-method.
+When changes occur the `Sensor` can notify all `Controller`s (**Observer Pattern**).
+`Controller`s can have a `main()`-method in which they can check regularly for something (invoked by main-class) but they also have an `onChange()`-method which is invoked by subjects.

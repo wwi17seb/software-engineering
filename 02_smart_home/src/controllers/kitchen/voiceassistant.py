@@ -14,9 +14,7 @@ class VoiceAssistant:
         elif (voiceInput == ""):
             print("Yes..?")
         elif (voiceInput.lower() == "what can you do"):
-            print("Here is what I can do:")
-            print("- heat oven to ...")
-            print("- switch kitchen lights off")
+            self.printListOfAvailableCommands()
         elif (voiceInput.lower().startswith("heat oven to")):
             temperature = voiceInput[len("heat oven to "):].split()[0]
             if (temperature.isdigit()):
@@ -38,8 +36,11 @@ class VoiceAssistant:
                     currentItem.turnOff()
         else:
             print("I can't do this yet.")
-            print("Here is what I can do:")
-            print("- heat oven to ...")
-            print("- switch kitchen lights off")
+            self.printListOfAvailableCommands()
 
         self.microphone.clear()
+
+    def printListOfAvailableCommands(self):
+        print("Here is what I can do:")
+        print("- heat oven to ...")
+        print("- switch kitchen lights off")
