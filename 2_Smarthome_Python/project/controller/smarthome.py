@@ -45,6 +45,7 @@ class Smarthome(IController):
         for room in self.rooms:
             if room.level == lvl and room.name == name:
                 return room
+        print("Raum existiert nicht.")
         return None
 
     def addRoom(self,lvl,name):

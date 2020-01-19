@@ -6,55 +6,40 @@ def raumHinzufuegen(smarthome):
     ebene = input("Ebene als Zahl: ")
     print("\nBitte geben Sie den Namen des Raumes an:")
     name = input("Raumname: ")
-    smarthome.addRoom(ebene,name)
+    smarthome.addRoom(int(ebene),name)
 
-def heizungHinzufuegen(smarthome):
+def raumEingabe(smarthome):
     print("\nBitte geben Sie die Ebene des Raumes an:")
     ebene = input("Ebene als Zahl: ")
     print("\nBitte geben Sie den Namen des Raumes an:")
     name = input("Raumname: ")
-    raum = smarthome.getRoomByName(ebene,name)
+    raum = smarthome.getRoomByName(int(ebene),name)
+
+    return raum
+
+def heizungHinzufuegen(smarthome):
+    raum=raumEingabe(smarthome)
 
     if raum!=None:
         smarthome.heatingcontroller.addHeater(raum)
-    else:
-        print("Raum existiert nicht.")
 
 def lampeHinzufuegen(smarthome):
-    print("\nBitte geben Sie die Ebene des Raumes an:")
-    ebene = input("Ebene als Zahl: ")
-    print("\nBitte geben Sie den Namen des Raumes an:")
-    name = input("Raumname: ")
-    raum = smarthome.getRoomByName(ebene,name)
+    raum=raumEingabe(smarthome)
 
     if raum!=None:
         smarthome.lightingcontroller.addLamp(raum)
-    else:
-        print("Raum existiert nicht.")
 
 def rolladenHinzufuegen(smarthome):
-    print("\nBitte geben Sie die Ebene des Raumes an:")
-    ebene = input("Ebene als Zahl: ")
-    print("\nBitte geben Sie den Namen des Raumes an:")
-    name = input("Raumname: ")
-    raum = smarthome.getRoomByName(ebene,name)
+    raum=raumEingabe(smarthome)
 
     if raum!=None:
         smarthome.lightingcontroller.addShutter(raum)
-    else:
-        print("Raum existiert nicht.")
 
 def smartWindowHinzufuegen(smarthome):
-    print("\nBitte geben Sie die Ebene des Raumes an:")
-    ebene = input("Ebene als Zahl: ")
-    print("\nBitte geben Sie den Namen des Raumes an:")
-    name = input("Raumname: ")
-    raum = smarthome.getRoomByName(ebene,name)
+    raum=raumEingabe(smarthome)
 
     if raum!=None:
         smarthome.ventilationcontroller.addWindow(raum)
-    else:
-        print("Raum existiert nicht.")
 
 def zurueck():
     pass
@@ -81,6 +66,44 @@ def geraetHinzufuegen(smarthome):
     else:
         print("Ungültige Zahl")
 
+def heizen(smarthome):
+    raum=raumEingabe(smarthome)
+
+    if raum!=None:
+        print("\nBitte geben Sie die gewünschte Temperatur ein:")
+        temperatur=input("in Grad Celsius: ")
+        smarthome.heatingcontroller.heatRoom(smarthome.ventilationcontroller,raum,int(temperatur))
+
+def lueften(smarthome):
+    raum=raumEingabe(smarthome)
+    if raum!=None:
+        smarthome.ventilationcontroller.ventilateRoom(smarthome.heatingcontroller,raum)
+
+def lichtAn(smarthome):
+    raum=raumEingabe(smarthome)
+    if raum!=None:
+        smarthome.lightingcontroller.lightRoom(raum)
+
+def lichtAus(smarthome):
+    raum=raumEingabe(smarthome)
+    if raum!=None:
+        smarthome.lightingcontroller.dimRoom(raum)
+
+def lichtAnAus(smarthome):
+    print("\nWas möchten Sie tun?")
+    print("\n1. Licht anschalten")
+    print("2. Licht ausschalten")
+    print("3. zurück")
+    eingabe = input("Wählen Sie eine Nummer: ")
+    if eingabe=="1":
+        lichtAn(smarthome)
+    elif eingabe=="2":
+        lichtAus(smarthome)
+    elif eingabe=="5":
+        zurueck()
+    else:
+        print("Ungültige Zahl")
+
 def beenden():
     return 1
 
@@ -102,6 +125,12 @@ def menu(smarthome):
             raumHinzufuegen(smarthome)
         elif eingabe == "2":
             geraetHinzufuegen(smarthome)
+        elif eingabe == "3":
+            heizen(smarthome)
+        elif eingabe == "4":
+            lueften(smarthome)
+        elif eingabe == "5":
+            lichtAnAus(smarthome)
         elif eingabe == "6":
             run=beenden()
         else:

@@ -21,7 +21,7 @@ class LightingController(IController):
         print("Rolladen hinzugefügt: " + str(shutter.id))
 
     def lightRoom(self,room):
-        if self.state==1:
+        if self.state==1 and self.getLightRoom(room) != None:
             if self.getLightRoom(room) <= 80:
                 available=0
                 for lamp in self.lamps:
@@ -53,4 +53,8 @@ class LightingController(IController):
                     print("Keine Rollläden im Raum: ",room.name," verfügbar")
 
     def getLightRoom(self,room):
-        return room.lsensor.getData()
+        if room.lsensor != None:
+            return room.lsensor.getData()
+        else:
+            print("Keine Lichtsensor vorhanden")
+            return None

@@ -26,6 +26,7 @@ class HeatingController(IController):
                         ventilationcontroller.stopVentilateRoom(room)
                 else:
                     print("Die Zieltemperatur liegt unter der Raumtemperatur.")
+                    self.stopHeatRoom(room)
             else:
                 print("Keine Heizung in " + room.name + " verfügbar.")
 
