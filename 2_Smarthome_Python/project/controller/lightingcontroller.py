@@ -12,20 +12,24 @@ class LightingController(IController):
         lamp = Lamp(room)
         self.lamps.append(lamp)
         room.smartdevices.append(lamp)
+        print("Lampe hinzugefügt: " + str(lamp.id))
 
     def addShutter(self, room):
         shutter = Shutter(room)
         self.shutters.append(shutter)
         room.smartdevices.append(shutter)
+        print("Rolladen hinzugefügt: " + str(shutter.id))
 
     def lightRoom(self,room):
-        if self.status==1:
+        if self.state==1:
             if self.getLightRoom(room) <= 80:
+                available=0
                 for lamp in self.lamps:
                     if lamp.room == room:
                         lamp.light()
-                    else:
-                        print("Keine Lampe im Raum: ",room.name," verfügbar")
+                        available=1
+                if available==0:
+                    print("Kein automatisches Fenster in " + room.name + " verfügbar.")
 
             if self.getLightRoom(room) >=50:
                 for shutter in self.shutters:
@@ -35,7 +39,7 @@ class LightingController(IController):
                         print("Keine Rollläden im Raum: ",room.name," verfügbar")
 
     def dimRoom(self,room):
-        if self.status==1:
+        if self.state==1:
             for lamp in self.lamps:
                 if lamp.room == room:
                     lamp.dim()

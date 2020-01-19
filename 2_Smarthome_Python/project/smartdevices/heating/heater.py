@@ -7,14 +7,8 @@ class Heater(SmartDevice):
 
 
     def heat(self,target):
-        print("Der Raum: ",self.room.name," hat aktuell ",self.room.hsensor.getData(), " Grad Celsius")
-
-        if target > self.room.hsensor.getData():
-            self.state=1
-            print("Ich beginne auf ", target, " zu heizen.")
-        else:
-            self.state=0
-            print("Die Zieltemperatur liegt unter der Raumtemperatur.")
+        self.state=1
+        print("Ich beginne auf ", target, " zu heizen.")
 
     def stopHeating(self):
         self.state=0

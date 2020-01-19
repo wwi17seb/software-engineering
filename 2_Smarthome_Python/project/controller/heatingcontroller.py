@@ -10,19 +10,31 @@ class HeatingController(IController):
         heater = Heater(room)
         self.heater.append(heater)
         room.smartdevices.append(heater)
+        print("Heizung hinzugefügt: " + str(heater.id))
 
-    def heatRoom(self,room,temperature):
-        if self.status==1:
-            for heater in self.heater:
-                if heater.room == room:
-                    heater.heat(temperature)
+    def heatRoom(self,ventilationcontroller,room,temperature):
+        if self.state==1:
+            if room.hsensor != None:
+                print("Der Raum: ",room.name," hat aktuell ",room.hsensor.getData(), " Grad Celsius")
+                if temperature > room.hsensor.getData():
+                    available=0
+                    for heater in self.heater:
+                        if heater.room == room:
+                            heater.heat(temperature)
+                            available=1
+                    if available==1:
+                        ventilationcontroller.stopVentilateRoom(room)
                 else:
-                    print("Keine Heizung in diesem Raum verfügbar")
+                    print("Die Zieltemperatur liegt unter der Raumtemperatur.")
+            else:
+                print("Keine Heizung in " + room.name + " verfügbar.")
 
     def stopHeatRoom(self,room):
-        if self.status==1:
+        if self.state==1:
+            available=0
             for heater in self.heater:
                 if heater.room == room:
                     heater.stopHeating()
-                else:
-                    print("Keine Heizung in diesem Raum verfügbar")
+                    available=1
+            if available==0:
+                print("Keine Heizung in " + room.name + " verfügbar.")
