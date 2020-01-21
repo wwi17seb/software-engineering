@@ -19,10 +19,6 @@ Actuators have a flag whether they should be controlled automatically (by sensor
 Actuators can be set back to 'auto' manually or there needs to be a way to automatically switch them back.
 That would mean that controllers need to check whether an actuator is set manually and may decide to override it back to 'auto' based on several conditions (time since override, significant environmental/sensor changes, ...).
 
-**QUESTION**:
-Should there be a class `Item` from which `Sensor` and `Actuator` can inherit?
-It could be also a good idea to have a class `Controller` from which the concrete controllers can inherit.
-
 **IDEA**:
 Make `value` of `Sensor` private and implement `setValue()`-method.
 When changes occur the `Sensor` can notify all `Controller`s (**Observer Pattern**).
