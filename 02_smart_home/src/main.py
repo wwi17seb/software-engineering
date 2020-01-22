@@ -58,29 +58,29 @@ class SmartHome:
         self.addItem(Microphone("wife", self.kitchen))
 
         # create controllers
-        self.controllers.append(RGBLightController(
+        self.addController(RGBLightController(
             self.getItemByName("lpbbed1"),
             self.getItemByName("csbed1"),
             self.getItemByName("rgblbed1")
         ))
 
-        self.controllers.append(HeatingController(
+        self.addController(HeatingController(
             self.getItemByName("tsliving1"),
             self.getItemByName("hliving1")
         ))
 
-        self.controllers.append(FireAlertController(
+        self.addController(FireAlertController(
             self.getItemByName("sdliving1"),
             self.getItemByName("tsliving1"),
             self.getItemByName("fahouse1")
         ))
 
-        self.controllers.append(WhiteLightController(
+        self.addController(WhiteLightController(
             self.getItemByName("lpbkitchen1"),
             self.getItemByName("wlkitchen1")
         ))
 
-        self.controllers.append(VoiceAssistant(
+        self.addController(VoiceAssistant(
             self.getItemByName("wife"),
             self
         ))
@@ -97,6 +97,9 @@ class SmartHome:
 
     def getAllItemNames(self):
         return self.items.keys()
+
+    def addController(self, controller):
+        self.controllers.append(controller)
 
     def runControllers(self, printNumberOfControllers=True):
         for controller in self.controllers:
