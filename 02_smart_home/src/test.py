@@ -7,16 +7,16 @@ from controllers import *
 class SmartHomeTest(unittest.TestCase):
 
     def testRGBLights(self):
-        self.sh = SmartHome()
-        self.sh.addController(basic.rgblightcontroller.RGBLightController(
-            self.sh.addItem(lightpushbutton.LightPushButton("testLightPushButton", None)),
-            self.sh.addItem(colorsetter.ColorSetter("testColorSetter", None)),
-            self.sh.addItem(rgblight.RGBLight("testRGBLight", None))
+        sh = SmartHome()
+        sh.addController(basic.rgblightcontroller.RGBLightController(
+            sh.addItem(lightpushbutton.LightPushButton("testLightPushButton", None)),
+            sh.addItem(colorsetter.ColorSetter("testColorSetter", None)),
+            sh.addItem(rgblight.RGBLight("testRGBLight", None))
         ))
-        self.sh.getItemByName("testColorSetter").setValue("red")
-        self.sh.getItemByName("testLightPushButton").setValue(True)
+        sh.getItemByName("testColorSetter").setValue("red")
+        sh.getItemByName("testLightPushButton").setValue(True)
         
-        light = self.sh.getItemByName("testRGBLight")
+        light = sh.getItemByName("testRGBLight")
         self.assertEqual(light.state, True)
         self.assertEqual(light.red, 255)
         self.assertEqual(light.green, 0)
