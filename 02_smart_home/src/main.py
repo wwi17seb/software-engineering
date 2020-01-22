@@ -12,7 +12,7 @@ from actuators.whitelight import WhiteLight
 
 from sensors.sensor import Sensor
 from sensors.colorsetter import ColorSetter
-from sensors.lightswitch import Lightswitch
+from sensors.lightpushbutton import LightPushButton
 from sensors.microphone import Microphone
 from sensors.motionsensor import MotionSensor
 from sensors.smokedetector import SmokeDetector
@@ -30,9 +30,6 @@ COMMANDS_CONTROLLER = ["c", "controller", "controllers"]
 COMMANDS_SENSORS = ["s", "sensor", "sensors"]
 COMMANDS_ACTUATORS = ["a", "actuator", "actuators"]
 
-COMMAND_CONTROLLERS_AUTO_TRUE = "c auto true"
-COMMAND_CONTROLLERS_AUTO_FALSE = "c auto false"
-
 
 class SmartHome:
     def __init__(self):
@@ -46,7 +43,7 @@ class SmartHome:
         self.controllers = []
 
         # create sensors and actuators
-        self.addItem(Lightswitch("lsbed1", self.bedroom))
+        self.addItem(LightPushButton("lpbbed1", self.bedroom))
         self.addItem(ColorSetter("csbed1", self.bedroom))
         self.addItem(RGBLight("rgblbed1", self.bedroom))
 
@@ -55,14 +52,14 @@ class SmartHome:
         self.addItem(SmokeDetector("sdliving1", self.livingRoom))
         self.addItem(FireAlert("fahouse1", None))
 
-        self.addItem(Lightswitch("lskitchen1", self.kitchen))
+        self.addItem(LightPushButton("lpbkitchen1", self.kitchen))
         self.addItem(WhiteLight("wlkitchen1", self.kitchen))
         self.addItem(Oven("okitchen1", self.kitchen))
         self.addItem(Microphone("wife", self.kitchen))
 
         # create controllers
         self.controllers.append(RGBLightController(
-            self.getItemByName("lsbed1"),
+            self.getItemByName("lpbbed1"),
             self.getItemByName("csbed1"),
             self.getItemByName("rgblbed1")
         ))
@@ -79,7 +76,7 @@ class SmartHome:
         ))
 
         self.controllers.append(WhiteLightController(
-            self.getItemByName("lskitchen1"),
+            self.getItemByName("lpbkitchen1"),
             self.getItemByName("wlkitchen1")
         ))
 
@@ -110,17 +107,14 @@ class SmartHome:
                       "controllers completed")
 
     def cli(self):
-        runControllersAutomatically = True
         def printHelp():
             print("Type '" + COMMAND_EXIT + "' to exit,")
             print("type '" + COMMAND_HELP + "' to print this help,")
             print("type one of " + str(COMMANDS_CONTROLLER) + " to run all controllers,")
             print("type one of " + str(COMMANDS_SENSORS) + " to list all sensors,")
             print("type one of " + str(COMMANDS_ACTUATORS) + " to list all actuators,")
-            print("type '" + COMMAND_CONTROLLERS_AUTO_FALSE + "' to stop running controllers automatically,")
-            print("type '" + COMMAND_CONTROLLERS_AUTO_TRUE + "' to run controllers automatically")
             print("or set a value for a sensor by 'sensorName' 'value'")
-            print("\nSensor names are NOT case-sensitive, controllers will run automatically by default")
+            print("\nSensor names are NOT case-sensitive, controllers will run automatically when sensor values change")
         printHelp()
         while(1):
             userInput = input("\n> ")
@@ -134,23 +128,15 @@ class SmartHome:
                 self._printSensors()
             elif (userInput in COMMANDS_ACTUATORS):
                 self._printActuators()
-            elif (userInput == COMMAND_CONTROLLERS_AUTO_TRUE):
-                runControllersAutomatically = True
-                print("controllers are now running automatically")
-            elif (userInput == COMMAND_CONTROLLERS_AUTO_FALSE):
-                runControllersAutomatically = False
-                print("controllers are no longer run automatically")
             else:
                 try:
                     itemName = userInput.split(" ", 1)[0]
                     value = userInput[len(itemName)+1:] # everything after item name -> in worst case an empty string
                     item = self.getItemByName(itemName)
                     if (isinstance(item, Sensor)):
-                        item.value = value
+                        item.setValue(value)
                     else:
                         raise ValueError
-                    if (runControllersAutomatically):
-                        self.runControllers()
                 except:
                     print("Unexpected command")
 

@@ -3,19 +3,25 @@ from sensors.temperaturesensor import TemperatureSensor
 
 
 class HeatingController:
-    def __init__(self, temperatureSensor, heating):
+    def __init__(self, temperatureSensor, heating, desiredTemperature=21):
         self.temperatureSensor = temperatureSensor
+        self.temperatureSensor.attach(self) # observe temperature sensor
+
         self.heating = heating
+
+        self.desiredTemperature = desiredTemperature
+
+    def setDesiredTemperature(self, desiredTemperature):
+        self.desiredTemperature = desiredTemperature
+
+    def update(self, sensor, value):
+        self.main()
 
     def main(self):
         temperature = self.temperatureSensor.getValue()
         if (type(temperature) != int):
             pass
-        elif (temperature < 16):
-            self.heating.setToMaxLevel()
-        elif (temperature < 20):
+        elif (temperature < self.desiredTemperature - 1):
             self.heating.increaseLevel()
-        elif (temperature > 27):
-            self.heating.turnOff()
-        elif (temperature > 24):
+        elif (temperature > self.desiredTemperature + 1):
             self.heating.decreaseLevel()

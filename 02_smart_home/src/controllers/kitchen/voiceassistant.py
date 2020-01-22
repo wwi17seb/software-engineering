@@ -5,9 +5,11 @@ from sensors import *
 class VoiceAssistant:
     def __init__(self, microphone, smartHome):
         self.microphone = microphone
+        self.microphone.attach(self) # observe microphone
+
         self.smartHome = smartHome
 
-    def main(self):
+    def update(self, sensor, value):
         voiceInput = self.microphone.getValue()
         if (voiceInput is None):
             pass
@@ -38,7 +40,8 @@ class VoiceAssistant:
             print("I can't do this yet.")
             self.printListOfAvailableCommands()
 
-        self.microphone.clear()
+    def main(self):
+        pass
 
     def printListOfAvailableCommands(self):
         print("Here is what I can do:")

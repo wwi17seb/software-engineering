@@ -15,16 +15,18 @@ class ColorSetter(Sensor):
         Sensor.__init__(self, name, room)
 
     def readValue(self):
-        # value gets injected by command line
-        if (self.value == None):
-            self.value = "#000000"
-        elif (self.value in COLOR_MAP):
-            self.value = COLOR_MAP[self.value]
-        elif (self.value[0] == "#" and len(self.value) == 7):
-            pass
+        pass
+
+    def parseValue(self, value):
+        if (value == None):
+            return "#000000"
+        elif (value in COLOR_MAP):
+            return COLOR_MAP[value]
+        elif (value[0] == "#" and len(value) == 7):
+            return value
         else:
-            self.value = "#000000"
+            return "#000000"
 
     def __str__(self):
         return str(self.name) + " (ColorSetter, " + str(self.room) + \
-            "): " + str(self.value)
+            "): " + str(self._value)

@@ -1,22 +1,37 @@
 from actuators.rgblight import RGBLight
-from sensors.lightswitch import Lightswitch
+from sensors.lightpushbutton import LightPushButton
 from sensors.colorsetter import ColorSetter
 
 
 class RGBLightController:
-    def __init__(self, switch, colorSetter, light):
-        self.lightswitch = switch
+    def __init__(self, lightPushButtons, colorSetter, rgbLights):
+        if (type(lightPushButtons) == list):
+            self.lightPushButtons = lightPushButtons
+        else:
+            self.lightPushButtons = [lightPushButtons]
+
+        # Observe push buttons
+        for pushButton in self.lightPushButtons:
+            pushButton.attach(self)
+
         self.colorSetter = colorSetter
-        self.rgbLight = light
+        self.colorSetter.attach(self) # observe color setter
+
+        if (type(rgbLights) == list):
+            self.rgbLights = rgbLights
+        else:
+            self.rgbLights = [rgbLights]
+
+    def update(self, sensor, value):
+        if (sensor in self.lightPushButtons and value):
+            for rgbLight in self.rgbLights:
+                rgbLight.toggleLight()
+        elif (sensor == self.colorSetter):
+            red = int(value[1:3], 16)
+            green = int(value[3:5], 16)
+            blue = int(value[5:7], 16)
+            for rgbLight in self.rgbLights:
+                rgbLight.setColor(red, green, blue)
 
     def main(self):
-        lightswitchValue = self.lightswitch.getValue()
-        if (lightswitchValue == True):
-            self.rgbLight.turnOn()
-        elif (lightswitchValue == False):
-            self.rgbLight.turnOff()
-        
-        colorValue = self.colorSetter.getValue()
-        self.rgbLight.red = int(colorValue[1:3], 16)
-        self.rgbLight.green = int(colorValue[3:5], 16)
-        self.rgbLight.blue = int(colorValue[5:7], 16)
+        pass

@@ -7,12 +7,14 @@ class MotionSensor(Sensor):
         Sensor.__init__(self, name, room)
 
     def readValue(self):
-        # value gets injected by command line
-        if (self.value in (1, "1", True, "True", "true", "moving", "move", "action")):
-            self.value = True
+        pass
+
+    def parseValue(self, value):
+        if (value in (1, "1", True, "True", "true", "moving", "move", "action")):
+            return True
         else:
-            self.value = False
+            return False
 
     def __str__(self):
         return str(self.name) + " (MotionSensor, " + str(self.room) + \
-            "): " + str(self.value)
+            "): " + str(self._value)

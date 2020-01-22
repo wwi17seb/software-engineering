@@ -7,8 +7,13 @@ from actuators.firealert import FireAlert
 class FireAlertController:
     def __init__(self, smokeDetector, temperatureSensor, fireAlert):
         self.smokeDetector = smokeDetector
+        self.smokeDetector.attach(self) # observe smoke detector
         self.temperatureSensor = temperatureSensor
+        self.temperatureSensor.attach(self) # observe temperature sensor
         self.firealert = fireAlert
+
+    def update(self, sensor, value):
+        self.main()
 
     def main(self):
         smokeDetectorValue = self.smokeDetector.getValue()

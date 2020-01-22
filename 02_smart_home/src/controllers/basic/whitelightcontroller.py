@@ -1,15 +1,27 @@
 from actuators.whitelight import WhiteLight
-from sensors.lightswitch import Lightswitch
+from sensors.lightpushbutton import LightPushButton
 
 
 class WhiteLightController:
-    def __init__(self, switch, light):
-        self.lightswitch = switch
-        self.whiteLight = light
+    def __init__(self, lightPushButtons, lights):
+        if (type(lightPushButtons) == list):
+            self.lightPushButtons = lightPushButtons
+        else:
+            self.lightPushButtons = [lightPushButtons]
+
+        # Observe push buttons
+        for pushButton in self.lightPushButtons:
+            pushButton.attach(self)
+
+        if (type(lights) == list):
+            self.lights = lights
+        else:
+            self.lights = [lights]
+
+    def update(self, sensor, value):
+        if (sensor in self.lightPushButtons and value):
+            for light in self.lights:
+                light.toggleLight()
 
     def main(self):
-        lightswitchValue = self.lightswitch.getValue()
-        if (lightswitchValue == True):
-            self.whiteLight.turnOn()
-        elif (lightswitchValue == False):
-            self.whiteLight.turnOff()
+        pass
