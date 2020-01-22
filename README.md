@@ -26,17 +26,17 @@
 * Composite
 * [Decorator](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/05_DesignPattern-Decorator/Design%20Pattern%20Decorator.pdf)
 * Facade
-* Flyweight
+* [Flyweight](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/flyweight/Flyweight-Pattern.pdf)
 * [Proxy](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/04_Proxy_und_CommandIntepreter/Proxy_und_Interpreter.pptx)
 
 ## Behavioral patterns
 * Chain of responsibility <!-- Gruppe 3 -->
 * [Command](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/04_Proxy_und_CommandIntepreter/Proxy_und_Interpreter.pptx)
 * Interpreter
-* Iterator <!-- Gruppe 2 -->
+* [Iterator](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/iterator/Iterator-Pattern.pdf)
 * Mediator
 * Memento <!-- Gruppe 4 -->
-* Observer <!-- Gruppe 3 -->
+* [Observer](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/06_DesignPattern_Observer/DesignPattern_Observer.pdf)
 * State <!-- Gruppe 2 -->
 * Strategy
 * [Template Method](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/Template%20Method%20Pattern/Template%20Method%20Pattern.pdf)
