@@ -1,4 +1,4 @@
-
+# Singleton --> only one house
 class House(object):
     __instance = None
 
@@ -10,18 +10,24 @@ class House(object):
         return House.__instance
 
     def __init__(self, city, address):
-        self.city = city
-        self.address = address
-        self.roomGroups = {}
-
-    def addRoomGroup(self, roomGroup):
-        self.roomGroups[roomGroup.name] = roomGroup
+        self.__city = city
+        self.__address = address
+        self.__roomGroups = []
 
     def getRoomGroups(self):
-        return self.roomGroups
+        return self.__roomGroups
 
-    def getRoomGroupByName(self, name):
-        return self.roomGroups[name]
+    def setCity(self, city):
+        self.__city = city
+
+    def getCity(self):
+        return self.__city
+
+    def setAddress(self, address):
+        self.__address = address
+
+    def getAddress(self):
+        return self.__address
 
 
 

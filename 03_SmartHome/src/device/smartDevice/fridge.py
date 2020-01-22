@@ -2,7 +2,8 @@ from .smartDevice import SmartDevice
 
 class Fridge(SmartDevice):
 
-    def __init__(self, name, description, serialNumber, macAddress, conntections, temperature, sensor):
+    def __init__(self, name, description, serialNumber, conntections, temperature, sensor):
+        super(Fridge, self).__init__(name, description, serialNumber, conntections)
         self.temperature = temperature
         self.sensor = sensor
 

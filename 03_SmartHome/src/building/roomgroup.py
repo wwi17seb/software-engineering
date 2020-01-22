@@ -2,14 +2,17 @@
 
 class RoomGroup():
     def __init__(self, name):
-        self.name = name
-        self.rooms = {}
+        self.__name = name
+        self.__rooms = []
 
     def addRoom(self, room):
-        self.rooms[room.name] = room
+        self.__rooms.append(room)
 
     def getRooms(self):
-        return self.rooms
+        return self.__rooms
 
-    def getRoomByName(self, name):
-        return self.rooms[name]
+    def setName(self, name):
+        self.__name = name
+
+    def getName(self):
+        return self.__name

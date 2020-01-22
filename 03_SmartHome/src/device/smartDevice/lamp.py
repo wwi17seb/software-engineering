@@ -2,8 +2,8 @@ from .smartDevice import SmartDevice
 
 class Lamp(SmartDevice):
 
-    def __init__(self, name, description, serialNumber, macAddress, conntections, brightness):
-        super().__init__(name, description, serialNumber, macAddress, conntections)
+    def __init__(self, name, description, serialNumber, conntections, brightness):
+        super().__init__(name, description, serialNumber, conntections)
         self.brightness = brightness
 
     def collectData(self):
