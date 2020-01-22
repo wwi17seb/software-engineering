@@ -1,8 +1,9 @@
 from actuators import *
 from sensors import *
+from controllers.controller import Controller
 
 
-class VoiceAssistant:
+class VoiceAssistant(Controller):
     def __init__(self, microphone, smartHome):
         self.microphone = microphone
         self.microphone.attach(self) # observe microphone

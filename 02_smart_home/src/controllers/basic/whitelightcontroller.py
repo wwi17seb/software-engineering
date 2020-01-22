@@ -1,8 +1,9 @@
 from actuators.whitelight import WhiteLight
 from sensors.lightpushbutton import LightPushButton
+from controllers.controller import Controller
 
 
-class WhiteLightController:
+class WhiteLightController(Controller):
     def __init__(self, lightPushButtons, lights):
         if (type(lightPushButtons) == list):
             self.lightPushButtons = lightPushButtons

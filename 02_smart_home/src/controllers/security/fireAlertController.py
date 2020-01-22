@@ -1,10 +1,10 @@
 from sensors.smokedetector import SmokeDetector
 from sensors.temperaturesensor import TemperatureSensor
-
 from actuators.firealert import FireAlert
+from controllers.controller import Controller
 
 
-class FireAlertController:
+class FireAlertController(Controller):
     def __init__(self, smokeDetector, temperatureSensor, fireAlert):
         self.smokeDetector = smokeDetector
         self.smokeDetector.attach(self) # observe smoke detector

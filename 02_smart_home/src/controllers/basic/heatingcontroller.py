@@ -1,8 +1,9 @@
 from actuators.heating import Heating
 from sensors.temperaturesensor import TemperatureSensor
+from controllers.controller import Controller
 
 
-class HeatingController:
+class HeatingController(Controller):
     def __init__(self, temperatureSensor, heating, desiredTemperature=21):
         self.temperatureSensor = temperatureSensor
         self.temperatureSensor.attach(self) # observe temperature sensor

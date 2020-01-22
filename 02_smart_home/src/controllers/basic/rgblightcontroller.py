@@ -1,9 +1,10 @@
 from actuators.rgblight import RGBLight
 from sensors.lightpushbutton import LightPushButton
 from sensors.colorsetter import ColorSetter
+from controllers.controller import Controller
 
 
-class RGBLightController:
+class RGBLightController(Controller):
     def __init__(self, lightPushButtons, colorSetter, rgbLights):
         if (type(lightPushButtons) == list):
             self.lightPushButtons = lightPushButtons
