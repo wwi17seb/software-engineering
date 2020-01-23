@@ -4,16 +4,21 @@ from controllers.controller import Controller
 
 
 class HeatingController(Controller):
-    def __init__(self, temperatureSensor, heating, desiredTemperature=21):
+    def __init__(self, temperatureSensor, heating,
+                    desiredTemperature=21, acceptableDiff=1):
         self.temperatureSensor = temperatureSensor
         self.temperatureSensor.attach(self) # observe temperature sensor
 
         self.heating = heating
 
         self.desiredTemperature = desiredTemperature
+        self.acceptableDiff = acceptableDiff
 
     def setDesiredTemperature(self, desiredTemperature):
         self.desiredTemperature = desiredTemperature
+
+    def setAcceptableDiff(self, acceptableDiff):
+        self.acceptableDiff = acceptableDiff
 
     def update(self, sensor, value):
         self.main()
@@ -23,7 +28,7 @@ class HeatingController(Controller):
         temperature = self.temperatureSensor.getValue()
         if (type(temperature) != int):
             pass
-        elif (temperature < self.desiredTemperature - 1):
+        elif (temperature < self.desiredTemperature - self.acceptableDiff):
             self.heating.increaseLevel()
-        elif (temperature > self.desiredTemperature + 1):
+        elif (temperature > self.desiredTemperature + self.acceptableDiff):
             self.heating.decreaseLevel()

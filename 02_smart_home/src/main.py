@@ -22,7 +22,7 @@ from controllers.basic.heatingcontroller import HeatingController
 from controllers.basic.rgblightcontroller import RGBLightController
 from controllers.basic.whitelightcontroller import WhiteLightController
 from controllers.kitchen.voiceassistant import VoiceAssistant
-from controllers.security.fireAlertController import FireAlertController
+from controllers.security.firealertcontroller import FireAlertController
 
 COMMAND_EXIT = "exit"
 COMMAND_HELP = "help"
