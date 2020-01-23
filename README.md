@@ -30,14 +30,14 @@
 * [Proxy](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/04_Proxy_und_CommandIntepreter/Proxy_und_Interpreter.pptx)
 
 ## Behavioral patterns
-* Chain of responsibility <!-- Gruppe 3 -->
+* [Chain of responsibility](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/07_DesignPattern_ChainOfResponsibility/DesignPattern_ChainOfResponsibility.pdf)
 * [Command](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/04_Proxy_und_CommandIntepreter/Proxy_und_Interpreter.pptx)
 * Interpreter
 * [Iterator](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/iterator/Iterator-Pattern.pdf)
 * Mediator
 * Memento <!-- Gruppe 4 -->
 * [Observer](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/06_DesignPattern_Observer/DesignPattern_Observer.pdf)
-* State <!-- Gruppe 2 -->
+* [State](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/state/State%20Pattern.pdf)
 * Strategy
 * [Template Method](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/Template%20Method%20Pattern/Template%20Method%20Pattern.pdf)
-* Visitor <!-- Gruppe 1 -->
+* [Visitor](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/06_Visitor_Pattern/Pr%C3%A4sentation_Visitor_Pattern.pdf)
