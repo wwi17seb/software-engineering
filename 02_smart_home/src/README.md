@@ -8,7 +8,7 @@ They get instanciated in the main class and can be controlled by the CLI.
 
 Controllers are packaged by use cases, e.g. there is one package for basic operations (lights, heating, ...), one for kitchen, security (alarms), ...
 
-**TODO**: add graphic to show architecture / concept of sensors, controllers and actuators
+![Architecture - Structure of Sensors, Controllers and Actuators](../presentations/architecture_sensor_controller_actuator.svg)
 
 **PROBLEM**:
 There needs to be a decision how to handle actuators which are normally controlled by sensors but can also be controlled directly/manually (e.g. Voice Assitant, Smartphone App).
