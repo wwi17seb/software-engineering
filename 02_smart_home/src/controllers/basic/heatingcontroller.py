@@ -19,6 +19,7 @@ class HeatingController(Controller):
         self.main()
 
     def main(self):
+        # TODO: decreasing/increasing based on time since last change
         temperature = self.temperatureSensor.getValue()
         if (type(temperature) != int):
             pass

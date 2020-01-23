@@ -17,7 +17,7 @@ class LightPushButton(Sensor):
 
     def setValue(self, value):
         super().setValue(value)
-        self._value = None # reset since it is a push-button
+        super().setValue(None) # reset since it is a push-button
 
     def __str__(self):
         return str(self.name) + " (LightPushButton, " + str(self.room) + ")"
