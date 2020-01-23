@@ -7,10 +7,10 @@ class Room():
         self.__devices = []
 
     def addDevice(self, device):
-        self.devices[device.name] = device
+        self.__devices.append(device)
 
     def getDevices(self):
-        return self.devices
+        return self.__devices
 
     def setHeight(self, height):
         self.__height = height
