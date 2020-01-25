@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gruppen
 * [Gruppe 1](https://github.com/WWI17SEB/software-engineering/tree/gruppe1)
 * [Gruppe 2](https://github.com/WWI17SEB/software-engineering/tree/gruppe2)
@@ -41,3 +42,7 @@
 * Strategy
 * [Template Method](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/Template%20Method%20Pattern/Template%20Method%20Pattern.pdf)
 * [Visitor](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/06_Visitor_Pattern/Pr%C3%A4sentation_Visitor_Pattern.pdf)
+=======
+# project_smarthome
+This repository is made to implement the classes for a smarthome system.
+>>>>>>> 39e4049171fb4ccfa989ae15503cb775f3252999
