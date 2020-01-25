@@ -1,10 +1,12 @@
 from .isensor import ISensor
+from .itarget import ITarget
 from .heatingobservable import heatingObservable
 
-class TemperatureSensor(ISensor):
+class TemperatureSensor(ISensor,ITarget):
 
     def __init__(self,room):
         ISensor.__init__(self,"Temperatursensor","Celsius",room)
+        ITarget.__init__(self)
         self.observable = heatingObservable()
 
     def setState(self,state):

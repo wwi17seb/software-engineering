@@ -7,7 +7,6 @@ class ISensor(ABC):
         self.id = next(self.newId)
         self.sensortype=sensortype
         self.unit=unit
-        self.target=0
         self.room=room
         self.state=0
 
@@ -16,9 +15,6 @@ class ISensor(ABC):
     
     def setState(self,state):
         self.state=state
-
-    def setTarget(self,target):
-        self.target=target
     
     @abstractmethod
     def measurement(self):

@@ -4,6 +4,9 @@ from sensors.lightsensor import LightSensor
 
 class Room:
     newId = itertools.count()
+
+    # durch smarthome als input für Konstruktor wird möglicherweise gegen DIP verstoßen, 
+    # hier im Kontext jedoch zu missachten, da raum nicht unabhängig vom Smarthome existieren sollte
     def __init__(self,name,smarthome):
         self.id = next(self.newId)
         self.name=name
