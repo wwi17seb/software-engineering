@@ -8,13 +8,13 @@ class Connection(ABC):
 
     @abstractmethod
     def connect(self, device):
-        pass
+        raise NotImplementedError
 
     
     @abstractmethod
     def disconnect(self, device):
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def checkCompatibility(self, device):
-        pass
+        raise NotImplementedError

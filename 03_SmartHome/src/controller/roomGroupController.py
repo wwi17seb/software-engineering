@@ -26,7 +26,7 @@ class RoomGroupController:
                 arg = input()
                 if arg.isdigit():
                     arg = int(arg)
-                    if arg >= len(self.roomGroups):
+                    if 0 >= arg >= len(self.roomGroups):
                         self.roomGroupConfiguration()
                     else:
                         self.groupConfiguration(self.roomGroups[arg])

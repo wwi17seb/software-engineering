@@ -1,5 +1,7 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
+
+
 class AbstractDevice(ABC):
 
     def __init__(self, name, description, serialNumber, conntections):
@@ -10,11 +12,11 @@ class AbstractDevice(ABC):
 
     @abstractmethod
     def turnOn(self):
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def turnOff(self):
-        pass
+        raise NotImplementedError
 
     def getName(self):
         return self.__name
