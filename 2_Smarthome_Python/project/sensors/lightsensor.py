@@ -3,7 +3,7 @@ from .isensor import ISensor
 class LightSensor(ISensor):
 
     def __init__(self):
-        ISensor.__init__(self,"Lichtsensor")
+        ISensor.__init__(self,"Lichtsensor","Lumen")
 
-    def getData(self):
-        return 80
+    def measurement(self):
+        self.setState(80)

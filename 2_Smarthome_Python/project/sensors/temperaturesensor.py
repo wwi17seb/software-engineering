@@ -3,7 +3,7 @@ from .isensor import ISensor
 class TemperatureSensor(ISensor):
 
     def __init__(self):
-        ISensor.__init__(self,"Temperatursensor")
+        ISensor.__init__(self,"Temperatursensor","Celsius")
 
-    def getData(self):
-        return 22
+    def measurement(self):
+        self.setState(22)
