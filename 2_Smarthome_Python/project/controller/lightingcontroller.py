@@ -22,7 +22,8 @@ class LightingController(IController):
 
     def lightRoom(self,room):
         if self.state==1 and self.getLightRoom(room) != None:
-            if self.getLightRoom(room) <= 80:
+            room.lsensor.measurement()
+            if self.getLightRoom(room) <= self.target:
                 available=0
                 for lamp in self.lamps:
                     if lamp.room == room:
