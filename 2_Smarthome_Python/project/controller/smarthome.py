@@ -35,22 +35,22 @@ class Smarthome(IController):
                 return 1
         return 0
 
-    def findRoomByName(self, lvl, name):
+    def findRoomByName(self, name):
         for room in self.rooms:
-            if room.level == lvl and room.name == name:
+            if room.name == name:
                 return 1
         return 0
 
-    def getRoomByName(self, lvl, name):
+    def getRoomByName(self, name):
         for room in self.rooms:
-            if room.level == lvl and room.name == name:
+            if room.name == name:
                 return room
         print("Raum existiert nicht.")
         return None
 
-    def addRoom(self,lvl,name):
-        if self.findRoomByName(lvl,name) == 1:
+    def addRoom(self,name):
+        if self.findRoomByName(name) == 1:
             print("Raum schon vorhanden")
         else:
-            self.rooms.append(Room(lvl,name))
+            self.rooms.append(Room(name))
             print("Neuen Raum hinzugefügt: ",self.rooms[-1].id)

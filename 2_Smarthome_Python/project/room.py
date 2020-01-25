@@ -4,9 +4,8 @@ from sensors.lightsensor import LightSensor
 
 class Room:
     newId = itertools.count()
-    def __init__(self,level,name):
+    def __init__(self,name):
         self.id = next(self.newId)
-        self.level=level
         self.name=name
         self.hsensor=None
         self.lsensor=None

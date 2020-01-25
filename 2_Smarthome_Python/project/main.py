@@ -2,18 +2,16 @@ from room import Room
 from controller.smarthome import Smarthome
 
 def raumHinzufuegen(smarthome):
-    print("\nBitte geben Sie die Ebene des Raumes an:")
-    ebene = input("Ebene als Zahl: ")
+   
     print("\nBitte geben Sie den Namen des Raumes an:")
     name = input("Raumname: ")
-    smarthome.addRoom(int(ebene),name)
+    smarthome.addRoom(name)
 
 def raumEingabe(smarthome):
-    print("\nBitte geben Sie die Ebene des Raumes an:")
-    ebene = input("Ebene als Zahl: ")
+   
     print("\nBitte geben Sie den Namen des Raumes an:")
     name = input("Raumname: ")
-    raum = smarthome.getRoomByName(int(ebene),name)
+    raum = smarthome.getRoomByName(name)
 
     return raum
 
@@ -145,9 +143,9 @@ def main():
 
 
     #ein paar Räume hinzufügen
-    smarthome.addRoom(2,"Wohnzimmer")
-    smarthome.addRoom(2,"Küche")
-    smarthome.addRoom(2,"Schlafzimmer")
+    smarthome.addRoom("Wohnzimmer")
+    smarthome.addRoom("Küche")
+    smarthome.addRoom("Schlafzimmer")
     #Raum doppelt hinzufügen
 #    smarthome.addRoom(2,"Küche")
 
