@@ -1,4 +1,6 @@
-class IController:
+from abc import ABC
+
+class IController(ABC):
     def __init__(self,name):
         self.state=0
         self.name=name

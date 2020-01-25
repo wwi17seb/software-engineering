@@ -16,13 +16,13 @@ class HeatingController(IController):
         if self.state==1:
             if room.hsensor != None:
                 room.hsensor.measurement()
-                room.hsensor.setTarget(target)
-
+            
                 print("Der Raum: ",room.name," hat aktuell ",room.hsensor.getData(), " Grad Celsius")
-                if self.target > room.hsensor.getData():
+                if target > room.hsensor.getData():
                     available=0
                     for heater in self.heater:
                         if heater.room == room:
+                            room.hsensor.setTarget(target)
                             heater.heat(target)
                             available=1
                     if available==1:

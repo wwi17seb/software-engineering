@@ -3,11 +3,12 @@ from abc import ABC, abstractmethod
 
 class ISensor(ABC):
     newId = itertools.count()
-    def __init__(self,sensortype,unit):
+    def __init__(self,sensortype,unit,room):
         self.id = next(self.newId)
         self.sensortype=sensortype
         self.unit=unit
         self.target=0
+        self.room=room
         self.state=0
 
     def getData(self):

@@ -102,12 +102,16 @@ def lichtAnAus(smarthome):
     else:
         print("Ungültige Zahl")
 
-def beenden():
+def beenden(smarthome):
+    smarthome.systemShutdown()
     return 1
 
 def menu(smarthome):
     #Smarthome starten
     smarthome.systemStart()
+    #Raum heizen
+    smarthome.heatingcontroller.heatRoom(smarthome.ventilationcontroller,smarthome.rooms[0],23)
+    smarthome.rooms[0].hsensor.setState(23)
     run = 0
     while run==0:
         print("\nSmarthome System: Bitte wählen Sie eine Option")
@@ -117,7 +121,7 @@ def menu(smarthome):
         print("4. Raum lüften")
         print("5. Licht an/aus")
         print("6. Beenden")
-        eingabe = input("Wählen Sie eine Nummer: ")
+        eingabe = input("> ")
 
         if eingabe == "1":
             raumHinzufuegen(smarthome)
@@ -130,7 +134,7 @@ def menu(smarthome):
         elif eingabe == "5":
             lichtAnAus(smarthome)
         elif eingabe == "6":
-            run=beenden()
+            run=beenden(smarthome)
         else:
             print("Ungültige Zahl")
 
@@ -161,8 +165,7 @@ def main():
     smarthome.ventilationcontroller.addWindow(smarthome.rooms[0])
     smarthome.ventilationcontroller.addWindow(smarthome.rooms[0])
 
-    #Raum heizen
-#    smarthome.heatingcontroller.heatRoom(smarthome.ventilationcontroller,smarthome.rooms[0],23)
+    
 
     #Raum lueften
 #    smarthome.ventilationcontroller.ventilateRoom(smarthome.heatingcontroller,smarthome.rooms[0])
