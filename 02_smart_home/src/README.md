@@ -1,5 +1,8 @@
 # Smart Home
 
+This is not fully fledged smart home system since it only consists of example packages to demonstrate a certain architectural style.
+This includes structure of modules and packages as well as Design Patterns (creational, structural and behavioral) introduced by the _Gang of Four_.
+
 ## Documentation
 
 There are three main classes/objects: sensors, actuators and controllers.
@@ -34,18 +37,17 @@ This can be useful if there are time-based decisions, but currently it is not re
 The `update()`-method is invoked everytime a value of an observed value changes.
 This includes also the information which sensor invoked the method and what it's current value is.
 
+## SOLID
+
+* **S**RP: A concrete sensor class is only responsible for reading the real value from the physical device (e.g. is the LightPushButton pressed?). A concrete actuator is only responsible for carrying out a specific task (e.g. switching light on). A controller implements the logic (e.g. if LightPushButton is pressed &rarr; switch lights on). With this a change in logic does not affect sensor or actuator implementations. In reverse changes in devices/hardware do not affect the logic (Controller).
+* **O**CP: Sensors as a whole are created equally and support basic methods (read(), set(), Observer-Pattern, ...), but can be further extended with device-specific functionalities.
+* **L**SP: In general subclasses do not change the functionality of inherited methods since they do not overwrite them. In certain cases methods are overwritten but still have the same basic functionality, e.g. setValue() of LightPushButton sets the value as expected but immediately resets it like the physical device does.
+* **I**SP: There are different types of lamps: single- and multi-colored (and in future further like dimmable). These are different interfaces which offer different functionalities. This means clients only have a specific interface according to their needs.
+* **D**IP: TODO
+
+TODO: move code, package structure, rcc&ass, metrics, coupling
+
 ## Development - ToDo's
-
-**PROBLEM**:
-There needs to be a decision how to handle actuators which are normally controlled by sensors but can also be controlled directly/manually (e.g. Voice Assitant, Smartphone App).
-Example: Based on the temperature sensor (22 °C) the controller would decide to set heating to level 2.
-The heating is set to level 4 by Voice Assistant.
-How should the controller handle this situation?
-
-Possible solution:
-Actuators have a flag whether they should be controlled automatically (by sensors / controllers) or whether they are set manually.
-Actuators can be set back to 'auto' manually or there needs to be a way to automatically switch them back.
-That would mean that controllers need to check whether an actuator is set manually and may decide to override it back to 'auto' based on several conditions (time since override, significant environmental/sensor changes, ...).
 
 **QUESTION**:
 Should `Controller`'s behave as a `Proxy` for `Actuator`'s so that every `Actuator` has only one `Controller` through which it can be controlled.
