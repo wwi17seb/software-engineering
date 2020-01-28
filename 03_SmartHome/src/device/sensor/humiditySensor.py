@@ -1,20 +1,19 @@
 from .sensor import Sensor
 
-
-class TemperatureSensor(Sensor):
+class HumiditySensor(Sensor):
 
     def __init__(self, name, description, serialNumber, conntections, status, trigger):
         super(name, description, serialNumber, conntections, status, trigger)
-        self.__currentTemp = 0 # °Celsius
+        self.__currentHumidity = 0 #Percentage
 
     def turnOn(self):
-        print("Temperature sensor" + self.name + "turned on.")
+        print("Humidity sensor" + self.name + "turned on.")
 
     def turnOff(self):
-        print("Temperature sensor" + self.name + "turned off.")
+        print("Humidity sensor" + self.name + "turned off.")
 
     def measure(self):
-        self.__currentTemp = 25
+        self.__currentHumidity = 25
 
     def getValue(self):
-        return self.__currentTemp
+         return self.__currentHumidity

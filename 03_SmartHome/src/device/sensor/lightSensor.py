@@ -1,20 +1,20 @@
 from .sensor import Sensor
 
 
-class TemperatureSensor(Sensor):
+class LightSensor(Sensor):
 
     def __init__(self, name, description, serialNumber, conntections, status, trigger):
         super(name, description, serialNumber, conntections, status, trigger)
-        self.__currentTemp = 0 # °Celsius
+        self.__currentBrightness = 0  # Lumen
 
     def turnOn(self):
-        print("Temperature sensor" + self.name + "turned on.")
+        print("Light sensor" + self.name + "turned on.")
 
     def turnOff(self):
-        print("Temperature sensor" + self.name + "turned off.")
+        print("Light sensor" + self.name + "turned off.")
 
     def measure(self):
-        self.__currentTemp = 25
+        self.__currentBrightness = 25
 
     def getValue(self):
-        return self.__currentTemp
+        return self.__currentBrightness

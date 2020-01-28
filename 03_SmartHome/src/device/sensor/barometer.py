@@ -1,20 +1,20 @@
 from .sensor import Sensor
 
 
-class TemperatureSensor(Sensor):
+class Bachometer(Sensor):
 
     def __init__(self, name, description, serialNumber, conntections, status, trigger):
         super(name, description, serialNumber, conntections, status, trigger)
-        self.__currentTemp = 0 # °Celsius
+        self.__currentPressure = 0  # in PSI
 
     def turnOn(self):
-        print("Temperature sensor" + self.name + "turned on.")
+        print("Bachometer" + self.name + "turned on.")
 
     def turnOff(self):
-        print("Temperature sensor" + self.name + "turned off.")
+        print("Bachometer" + self.name + "turned off.")
 
     def measure(self):
-        self.__currentTemp = 25
+        self.__currentPressure = 25
 
     def getValue(self):
-        return self.__currentTemp
+        return self.__currentPressure
