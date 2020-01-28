@@ -1,5 +1,5 @@
-from device.smartDevice.fridge import Fridge
-from device.smartDevice.lamp import Lamp
+from device.smartDevice.kitchen.fridge import Fridge
+from device.smartDevice.lamp.lamp import Lamp
 from connection.wlan import WLAN
 from connection.bluetooth import BlueTooth
 from controller.deviceController import DeviceController

@@ -1,4 +1,4 @@
-from .smartDevice import SmartDevice
+from device.smartDevice.smartDevice import SmartDevice
 from device.sensor.temperatureSensor import TemperatureSensor
 from device.sensor.sensor import Sensor
 
