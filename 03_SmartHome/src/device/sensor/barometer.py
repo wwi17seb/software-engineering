@@ -1,17 +1,17 @@
 from .sensor import Sensor
 
 
-class Bachometer(Sensor):
+class Barometer(Sensor):
 
     def __init__(self, name, description, serialNumber, connections, status, trigger):
-        super.__init__(name, description, serialNumber, connections, status, trigger)
+        super(Barometer, self).__init__(name, description, serialNumber, connections, status, trigger)
         self.__currentPressure = 0  # in PSI
 
     def turnOn(self):
-        print("Bachometer" + self.name + "turned on.")
+        print("Barometer" + self.__name + "turned on.")
 
     def turnOff(self):
-        print("Bachometer" + self.name + "turned off.")
+        print("Barometer" + self.__name + "turned off.")
 
     def measure(self):
         self.__currentPressure = 25

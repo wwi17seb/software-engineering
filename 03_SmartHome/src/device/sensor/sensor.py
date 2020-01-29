@@ -27,10 +27,10 @@ class Sensor(AbstractDevice):
     def register(self, who, callback=None):
         if callback is None:
             callback = getattr(who, 'update')
-        self.subscribers[who] = callback
+        self.__subscribers[who] = callback
 
     def unregister(self, who):
-        del self.subscribers[who]
+        del self.__subscribers[who]
 
     def dispatch(self):
         if self.getValue() != self.__trigger:
@@ -38,5 +38,5 @@ class Sensor(AbstractDevice):
         else:
             self.__status = self.GOOD
 
-        for subscriber, callback in self.subscribers.items():
+        for subscriber, callback in self.__subscribers.items():
             callback(self, self.getValue(), self.getStatus())
