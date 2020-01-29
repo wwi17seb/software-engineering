@@ -70,7 +70,7 @@ class RoomGroupController:
                 for i in range(len(rooms)):
                     print(i, "-", rooms[i].getName())
 
-                print("Type s to select room or something else to return: ")
+                print("Type s to select room or a to add a room or something else to return: ")
                 arg = input()
                 if arg == "s":
                     print("Please select room: ")
@@ -82,6 +82,11 @@ class RoomGroupController:
                         else:
                             roomController = RoomController(rooms[arg])
                             roomController.roomConfiguration()
+                            self.groupConfiguration(roomgroup)
+                if arg == "a":
+                    self.addRoom(roomgroup)
+                    self.groupConfiguration(roomgroup)
+
         elif arg == "n":
             print("New group name: ")
             arg = input()
