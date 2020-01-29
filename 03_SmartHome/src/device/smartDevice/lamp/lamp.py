@@ -11,6 +11,7 @@ class Lamp(SmartDevice):
         self.__maxTemp = 40
         self.__sensor = TemperatureSensor(name, description, None, None, 1, self.__maxTemp)
         self.__sensor.register(self, self.update())
+        self.__sensor.turnOff()
 
     def collectData(self):
         print("Smart lamp " + self.__name + " collects data from sensors...")
@@ -29,11 +30,11 @@ class Lamp(SmartDevice):
         print("Lamp " + self.__name + " turned off.")
 
     def update(self, sensor, value, status):
-        if status == Sensor.ERROR or value != self.maxTemp:
+        if status == Sensor.ERROR or value != self.__maxTemp:
             print("Lamp", self.__name, "got temperature problems -> reducing brightness!")
-            self.brightness -= 1
+            self.__brightness -= 1
         else:
-            print("Lamp", self.name, "works fine.")
+            print("Lamp", self.__name, "works fine.")
 
     def __changeBrightness(self, brightness):
         self.__brightness = brightness
