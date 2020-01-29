@@ -4,6 +4,7 @@ from connection.wlan import WLAN
 from connection.bluetooth import BlueTooth
 from controller.deviceController import DeviceController
 
+# uses principle principle SDP, OCP, SRP, CCP
 class RoomController:
 
     def __init__(self, room):

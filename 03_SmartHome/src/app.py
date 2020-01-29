@@ -1,7 +1,7 @@
 import building.house as house
 import controller.roomGroupController as roomGroupController
 
-
+# uses principle principle SDP, OCP, SRP, CCP
 class MainController():
 
     def __init__(self):

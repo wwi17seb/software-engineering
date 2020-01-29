@@ -1,6 +1,7 @@
 from .sensor import Sensor
 
-
+# uses principle LSP, SDP, OCP, SRP, CCP
+# implements Observer
 class Barometer(Sensor):
 
     def __init__(self, name, description, serialNumber, connections, status, trigger):
