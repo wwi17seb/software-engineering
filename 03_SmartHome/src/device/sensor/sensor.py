@@ -2,7 +2,8 @@ from __future__ import annotations
 from abc import abstractmethod
 from ..abstractDevice import AbstractDevice
 
-
+# uses principle LSP, SDP, OCP, SRP, CCP
+# uses Observer pattern with specified sensors
 class Sensor(AbstractDevice):
     GOOD = 1
     ERROR = 2

@@ -1,3 +1,4 @@
+# uses principle principle SDP, OCP, SRP, CCP
 class Room():
 
     def __init__(self, height, name, area):

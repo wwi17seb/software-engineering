@@ -2,6 +2,7 @@ from building.room import Room
 from building.roomgroup import RoomGroup
 from controller.roomController import RoomController
 
+# uses principle principle SDP, OCP, SRP, CCP
 class RoomGroupController:
 
     def __init__(self, roomGroups):

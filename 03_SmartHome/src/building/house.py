@@ -1,4 +1,4 @@
-# Singleton --> only one house
+# Singleton --> only one house 
 class House(object):
     __instance = None
 

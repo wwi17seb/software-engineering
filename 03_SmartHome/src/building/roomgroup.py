@@ -1,5 +1,4 @@
-
-
+# uses principle principle SDP, OCP, SRP, CCP
 class RoomGroup():
     def __init__(self, name):
         self.__name = name

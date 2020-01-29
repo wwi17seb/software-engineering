@@ -1,6 +1,7 @@
-
 from __future__ import annotations
 from abc import ABC, abstractmethod
+
+# uses principle principle SDP, OCP, SRP, CCP
 class Connection(ABC):
 
     def __init__(self):

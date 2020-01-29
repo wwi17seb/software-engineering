@@ -1,5 +1,6 @@
 from .connectionDevice import ConnectionDevice
 
+# uses principle principle SDP, OCP, SRP, CCP, LSP
 class Router(ConnectionDevice):
 
     def __init__(self, name, description, serialNumber, macAddress, conntections, ports):

@@ -1,7 +1,7 @@
 from device.sensor.sensor import Sensor
 from device.smartDevice.smartDevice import SmartDevice
 
-
+# uses principle principle SDP, OCP, SRP, CCP
 class DeviceController:
 
     def __init__(self, device):

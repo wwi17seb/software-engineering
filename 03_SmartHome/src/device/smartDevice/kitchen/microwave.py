@@ -2,6 +2,7 @@ from device.smartDevice.smartDevice import SmartDevice
 from device.sensor.temperatureSensor import TemperatureSensor
 from device.sensor.sensor import Sensor
 
+# uses principle principle SDP, OCP, SRP, CCP
 class Microwave(SmartDevice):
 
     DEFAULT_TEMP = 20
