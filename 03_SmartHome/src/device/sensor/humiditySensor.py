@@ -2,8 +2,8 @@ from .sensor import Sensor
 
 class HumiditySensor(Sensor):
 
-    def __init__(self, name, description, serialNumber, conntections, status, trigger):
-        super(name, description, serialNumber, conntections, status, trigger)
+    def __init__(self, name, description, serialNumber, connections, status, trigger):
+        super.__init__(name, description, serialNumber, connections, status, trigger)
         self.__currentHumidity = 0 #Percentage
 
     def turnOn(self):

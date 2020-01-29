@@ -7,8 +7,8 @@ class Sensor(AbstractDevice):
     GOOD = 1
     ERROR = 2
 
-    def __init__(self, name, description, serialNumber, conntections, status, trigger):
-        super(name, description, serialNumber, conntections)
+    def __init__(self, name, description, serialNumber, connections, status, trigger):
+        super(Sensor, self).__init__(name, description, serialNumber, connections)
         self.__status = status
         self.__trigger = trigger
         self.__subscribers = dict()

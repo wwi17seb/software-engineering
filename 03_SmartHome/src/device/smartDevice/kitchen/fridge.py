@@ -8,7 +8,7 @@ class Fridge(SmartDevice):
         super(Fridge, self).__init__(name, description, serialNumber, connections)
         self.defaultTemperature = temperature
         self.sensor = TemperatureSensor(name, description, None, None, 1, temperature)
-        self.sensor.register(self, self.update())
+        self.sensor.register(self, self.update)
         self.currentTemp = temperature
 
     def collectData(self):

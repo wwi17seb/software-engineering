@@ -6,7 +6,7 @@ from device.sensor.sensor import Sensor
 class Lamp(SmartDevice):
 
     def __init__(self, name, description, serialNumber, conntections, brightness):
-        super().__init__(name, description, serialNumber, conntections)
+        super(Lamp, self).__init__(name, description, serialNumber, conntections)
         self.__brightness = brightness
         self.__maxTemp = 40
         self.__sensor = TemperatureSensor(name, description, None, None, 1, self.__maxTemp)

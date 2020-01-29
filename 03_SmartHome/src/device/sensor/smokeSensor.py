@@ -3,8 +3,8 @@ from .sensor import Sensor
 
 class SmokeSensor(Sensor):
 
-    def __init__(self, name, description, serialNumber, conntections, status, trigger):
-        super(name, description, serialNumber, conntections, status, trigger)
+    def __init__(self, name, description, serialNumber, connections, status, trigger):
+        super.__init__(name, description, serialNumber, connections, status, trigger)
         self.__smoke = False
 
     def turnOn(self):

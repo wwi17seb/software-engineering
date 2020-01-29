@@ -3,9 +3,9 @@ from .sensor import Sensor
 
 class TemperatureSensor(Sensor):
 
-    def __init__(self, name, description, serialNumber, conntections, status, trigger):
-        super(name, description, serialNumber, conntections, status, trigger)
-        self.__currentTemp = 0 # °Celsius
+    def __init__(self, name, description, serialNumber, connections, status, trigger):
+        super(TemperatureSensor, self).__init__(name, description, serialNumber, connections, status, trigger)
+        self.__currentTemp = 0  # °Celsius
 
     def turnOn(self):
         print("Temperature sensor" + self.name + "turned on.")

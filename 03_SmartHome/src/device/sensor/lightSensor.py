@@ -3,8 +3,8 @@ from .sensor import Sensor
 
 class LightSensor(Sensor):
 
-    def __init__(self, name, description, serialNumber, conntections, status, trigger):
-        super(name, description, serialNumber, conntections, status, trigger)
+    def __init__(self, name, description, serialNumber, connections, status, trigger):
+        super.__init__(name, description, serialNumber, connections, status, trigger)
         self.__currentBrightness = 0  # Lumen
 
     def turnOn(self):
