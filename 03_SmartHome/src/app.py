@@ -1,5 +1,7 @@
 import building.house as house
 import controller.roomGroupController as roomGroupController
+import controller.routineController as routineController
+
 
 
 class MainController():
@@ -7,6 +9,7 @@ class MainController():
     def __init__(self):
         self.smartHome = None
         self.roomGroupController = None
+        self.routineController = None
 
     def transmitCommand(self, command):
         pass
@@ -29,13 +32,20 @@ class MainController():
             print("Here is your help. These are the possible commands: ")
             print("s  - Smart Home basic configs.")
             print("rg - Roomgroup and room configs.")
+            print("rt - Routines configs.")
             print("e  - Exit SMART HOME System.")
         elif arg == "s":
             self.smartHomeController()
         elif arg == "rg":
             if self.roomGroupController is None:
                 self.smartHomeController()
-            self.roomGroupController.roomGroupConfiguration()
+            else: 
+                self.roomGroupController.roomGroupConfiguration()
+        elif arg == "rt":
+            if self.routineController is None: 
+                self.smartHomeController()
+            else: 
+                self.routineController.routineConfiguration()
         elif arg == "e":
             import sys
             sys.exit()
@@ -51,6 +61,7 @@ class MainController():
                 address = input()
                 self.smartHome = house.House(city, address)
                 self.roomGroupController = roomGroupController.RoomGroupController(self.smartHome.getRoomGroups())
+                self.routineController = routineController.RoutineController(self.smartHome)
                 print("Your SMART HOME is now ready for take off!")
                 self.smartHomeController()
         else:
