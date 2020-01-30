@@ -1,7 +1,7 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
 
-
+# uses SRP, OCP, LSP(Oberklasse), 
 class AbstractDevice(ABC):
 
     def __init__(self, name, description, serialNumber, conntections):

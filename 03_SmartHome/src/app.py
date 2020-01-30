@@ -3,7 +3,7 @@ import controller.roomGroupController as roomGroupController
 import controller.routineController as routineController
 
 
-
+# uses principle principle SDP, OCP, SRP, CCP
 class MainController():
 
     def __init__(self):

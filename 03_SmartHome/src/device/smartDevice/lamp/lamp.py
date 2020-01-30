@@ -3,7 +3,7 @@ from device.sensor.temperatureSensor import TemperatureSensor
 from device.sensor.sensor import Sensor
 from routinesAndCommands import abstractCommand, commands
 
-
+# uses principle principle SDP, OCP, SRP, CCP
 class Lamp(SmartDevice):
 
     def __init__(self, name, description, serialNumber, connections, brightness):
@@ -13,27 +13,30 @@ class Lamp(SmartDevice):
         self.__sensor = TemperatureSensor(name, description, None, None, 1, self.__maxTemp)
         self.__sensor.register(self, self.update())
         self.__commands = {turnOn(self), turnOff(self)}
+        self.__sensor.turnOff()
 
     def collectData(self):
-        print("Smart lamp " + self.name + " collects data from sensors...")
+        print("Smart lamp " + self.__name + " collects data from sensors...")
         print("Temperature:", self.__sensor.getValue())
 
     def exectuteCommand(self, command):
         self.__changeBrightness(command)
-        print("Smart lamp " + self.name + " executed command " + str(command) + ".")
+        print("Smart lamp " + self.__name + " executed command " + str(command) + ".")
 
     def turnOn(self):
-        print("Lamp " + self.name + " turned on.")
+        self.__sensor.turnOn()
+        print("Lamp " + self.__name + " turned on.")
 
     def turnOff(self):
-        print("Lamp " + self.name + " turned off.")
+        self.__sensor.turnOff()
+        print("Lamp " + self.__name + " turned off.")
 
     def update(self, sensor, value, status):
-        if status == Sensor.ERROR or value != self.maxTemp:
-            print("Lamp", self.name, "got temperature problems -> reducing brightness!")
-            self.brightness -= 1
+        if status == Sensor.ERROR or value != self.__maxTemp:
+            print("Lamp", self.__name, "got temperature problems -> reducing brightness!")
+            self.__brightness -= 1
         else:
-            print("Lamp", self.name, "works fine.")
+            print("Lamp", self.__name, "works fine.")
 
     def __changeBrightness(self, brightness):
         self.__brightness = brightness

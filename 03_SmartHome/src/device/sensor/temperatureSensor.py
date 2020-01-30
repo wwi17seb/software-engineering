@@ -1,6 +1,7 @@
 from .sensor import Sensor
 
-
+# uses principle LSP, SDP, OCP, SRP, CCP
+# implements Observer
 class TemperatureSensor(Sensor):
 
     def __init__(self, name, description, serialNumber, connections, status, trigger):
@@ -8,10 +9,10 @@ class TemperatureSensor(Sensor):
         self.__currentTemp = 0  # °Celsius
 
     def turnOn(self):
-        print("Temperature sensor" + self.name + "turned on.")
+        print("Temperature sensor" + self.__name + "turned on.")
 
     def turnOff(self):
-        print("Temperature sensor" + self.name + "turned off.")
+        print("Temperature sensor" + self.__name + "turned off.")
 
     def measure(self):
         self.__currentTemp = 25
