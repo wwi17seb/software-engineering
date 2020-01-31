@@ -22,4 +22,4 @@ class WhiteLight(Actuator):
 
 
 if __name__ == "__main__":
-    whiteLight = WhiteLight("testLight")
+    whiteLight = WhiteLight("testLight", None)

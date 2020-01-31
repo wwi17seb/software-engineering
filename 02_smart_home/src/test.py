@@ -1,6 +1,6 @@
 import unittest
 from main import SmartHome
-from room import Room
+from house.room import Room
 from items.sensors import *
 from items.actuators import *
 from controllers import *

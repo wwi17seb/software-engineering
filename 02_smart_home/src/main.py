@@ -1,4 +1,4 @@
-from room import Room
+from house.room import Room
 
 from items.actuators.actuator import Actuator
 from items.actuators.firealert import FireAlert
