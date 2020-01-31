@@ -27,11 +27,11 @@
 * [Decorator](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/05_DesignPattern-Decorator/Design%20Pattern%20Decorator.pdf)
 * Facade
 * [Flyweight](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/flyweight/Flyweight-Pattern.pdf)
-* [Proxy](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/04_Proxy_und_CommandIntepreter/Proxy_und_Interpreter.pptx)
+* [Proxy](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/04_Proxy_und_Command/Proxy_und_Command.pptx)
 
 ## Behavioral patterns
 * [Chain of responsibility](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/07_DesignPattern_ChainOfResponsibility/DesignPattern_ChainOfResponsibility.pdf)
-* [Command](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/04_Proxy_und_CommandIntepreter/Proxy_und_Interpreter.pptx)
+* [Command](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/04_Proxy_und_Command/Proxy_und_Command.pptx)
 * Interpreter
 * [Iterator](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/iterator/Iterator-Pattern.pdf)
 * Mediator
