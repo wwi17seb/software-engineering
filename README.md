@@ -35,7 +35,7 @@
 * Interpreter
 * [Iterator](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/iterator/Iterator-Pattern.pdf)
 * Mediator
-* Memento <!-- Gruppe 4 -->
+* [Memento](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/Memento/_Memento.pdf)
 * [Observer](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/06_DesignPattern_Observer/DesignPattern_Observer.pdf)
 * [State](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/state/State%20Pattern.pdf)
 * Strategy
