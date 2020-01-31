@@ -62,8 +62,6 @@ This includes also the information which sensor invoked the method and what it's
 
 ## Remarks and Ideas
 
-TODO: 51/5-13
-
 **REMARK**:
 Sensors and actuators currently have bad metrics, because they are not abstract, but are stable. Because of this further improvements to the smarthome system have to include the refactoring of those classes. We recommend changing all current sensors and actuators into abstract classes which are used by classes more accurate representations of real items. A good example is the `microphone`. We opted to use it as our concrete implementation, but after calculation the metrics we came to the conclusion you should use microphone as a superclass and implement subclasses like `amazon-echo-input`.
 
