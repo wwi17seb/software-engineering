@@ -1,6 +1,6 @@
 # Smart Home
 
-This is not fully fledged smart home system since it only consists of example packages to demonstrate a certain architectural style.
+This is not fully fledged smart home system since it only consists of example packages to demonstrate a certain architectural style - just like the motto: _Ceci n'est pas une smart home_.
 This includes structure of modules and packages as well as Design Patterns (creational, structural and behavioral) introduced by the _Gang of Four_.
 
 ## Documentation
@@ -43,11 +43,27 @@ This includes also the information which sensor invoked the method and what it's
 * **O**CP: Sensors as a whole are created equally and support basic methods (read(), set(), Observer-Pattern, ...), but can be further extended with device-specific functionalities.
 * **L**SP: In general subclasses do not change the functionality of inherited methods since they do not overwrite them. In certain cases methods are overwritten but still have the same basic functionality, e.g. setValue() of LightPushButton sets the value as expected but immediately resets it like the physical device does.
 * **I**SP: There are different types of lamps: single- and multi-colored (and in future further like dimmable). These are different interfaces which offer different functionalities. This means clients only have a specific interface according to their needs.
-* **D**IP: TODO
+* **D**IP: see [metrics](#metrics).
 
-TODO: move code, package structure, rcc&ass, metrics, coupling
+## RCC & ASS
 
-## Development - ToDo's
+* **R**EP: Abstract classes all use common interfaces to communicate, because of this changes occur not as often this makes it easier to reuse. Concrete implementations of items are ordered by the needs of clients, e.g. controller packages are divided into different use cases like security or kitchen.
+* **C**CP: The division into different packages is really important for the development of a smart home system. On one hand changes of one class will likely occur in classes used for the same purposes as well (e.g. the sensor classes implement a common interface), on the other hand it is easier to understand what the main objective of that class is.
+* **C**RP: In the smarthome system sensors and actuators are used together because the values raised by sensors influence the actuators significantly. Hence they are part of the item package.
+
+- **A**DP, **S**DP, **S**AP: Dependencies are always directed to packages which are more abstract and stable than themselves, see [metrics](#metrics).
+
+## Metrics
+
+![temp](../presentations/package_structure.svg)
+
+
+## Remarks and Ideas
+
+TODO: 51/5-13
+
+**REMARK**:
+Sensors and actuators currently have bad metrics, because they are not abstract, but are stable. Because of this further improvements to the smarthome system have to include the refactoring of those classes. We recommend changing all current sensors and actuators into abstract classes which are used by classes more accurate representations of real items. A good example is the `microphone`. We opted to use it as our concrete implementation, but after calculation the metrics we came to the conclusion you should use microphone as a superclass and implement subclasses like `amazon-echo-input`.
 
 **QUESTION**:
 Should `Controller`'s behave as a `Proxy` for `Actuator`'s so that every `Actuator` has only one `Controller` through which it can be controlled.
@@ -56,3 +72,9 @@ This would mean that e.g. `Voice Controller` would need to access `Controller`'s
 **IDEA**:
 Use just one `FireAlertController` (`Singleton`?) which receives the whole `SmartHome` as an argument and can then take values of all `Sensor`'s it needs (`SmokeDetector`, `TemperatureSensor`, ...).
 This could make it easier to implement new features for `FireAlertController` in the future.
+
+**IDEA**:
+The `house` can be expanded by `floors` or other `house` related entities. This way specialized `rooms` like a `garage` can have their own classes and still be part of the `house`-package.
+
+**REMARK**:
+The `Voiceassistant` is currently part of the `kitchen`-package, because it's implemented that way and only works for `items` inside the `room` _kitchen_. In case the `Voiceassistant` gets new functionality that doesn't concearn the kitchen it has to have it's own `assistant`-package. (Why is it not in that package already? We love agile developement and want our code to be as easy to understand as possible. Because of this we decided to limit the `Voiceassitant` to only be responsible for controlling `items` in this specialized room. We have given some thought to the bigger picture already, but we argue that implementing things only serving a purpose in the future can be considered to be part of a waterfall approach and only complicate the code.)
