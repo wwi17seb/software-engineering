@@ -62,8 +62,6 @@ This includes also the information which sensor invoked the method and what it's
 
 ## Remarks and Ideas
 
-TODO: 51/5-13
-
 **REMARK**:
 Sensors and actuators currently have bad metrics, because they are not abstract, but are stable. Because of this further improvements to the smarthome system have to include the refactoring of those classes. We recommend changing all current sensors and actuators into abstract classes which are used by classes more accurate representations of real items. A good example is the `microphone`. We opted to use it as our concrete implementation, but after calculation the metrics we came to the conclusion you should use microphone as a superclass and implement subclasses like `amazon-echo-input`.
 
@@ -79,4 +77,4 @@ This could make it easier to implement new features for `FireAlertController` in
 The `house` can be expanded by `floors` or other `house` related entities. This way specialized `rooms` like a `garage` can have their own classes and still be part of the `house`-package.
 
 **REMARK**:
-The `Voiceassistant` is currently part of the `kitchen`-package, because it's implemented that way and only works for `items` inside the `room` _kitchen_. In case the `Voiceassistant` gets new functionality that doesn't concearn the kitchen it has to have it's own `assistant`-package. (Why is it not in that package already? We love agile developement and want our code to be as easy to understand as possible. Because of this we decided to limit the `Voiceassitant` to only be responsible for controlling `items` in this specialized room. We have given some thought to the bigger picture already, but we argue that implementing things only serving a purpose in the future can be considered to be part of a waterfall approach and only complicate the code.)
+The `VoiceAssistant` is currently part of the `kitchen`-package, because it's implemented that way and only works for `items` inside the `room` _kitchen_. In case the `VoiceAssistant` gets new functionality that doesn't concearn the kitchen it has to have it's own `assistant`-package. (Why is it not in that package already? We love agile developement and want our code to be as easy to understand as possible. Because of this we decided to limit the `VoiceAssistant` to only be responsible for controlling `items` in this specialized room. We have given some thought to the bigger picture already, but we argue that implementing things only serving a purpose in the future can be considered to be part of a waterfall approach and only complicate the code.)
