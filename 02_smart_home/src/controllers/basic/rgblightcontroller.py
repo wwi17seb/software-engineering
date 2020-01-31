@@ -1,6 +1,6 @@
-from actuators.rgblight import RGBLight
-from sensors.lightpushbutton import LightPushButton
-from sensors.colorsetter import ColorSetter
+from items.actuators.rgblight import RGBLight
+from items.sensors.lightpushbutton import LightPushButton
+from items.sensors.colorsetter import ColorSetter
 from controllers.controller import Controller
 
 

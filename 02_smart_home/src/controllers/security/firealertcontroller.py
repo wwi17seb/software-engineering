@@ -1,6 +1,6 @@
-from sensors.smokedetector import SmokeDetector
-from sensors.temperaturesensor import TemperatureSensor
-from actuators.firealert import FireAlert
+from items.sensors.smokedetector import SmokeDetector
+from items.sensors.temperaturesensor import TemperatureSensor
+from items.actuators.firealert import FireAlert
 from controllers.controller import Controller
 
 

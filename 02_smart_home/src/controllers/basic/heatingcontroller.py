@@ -1,5 +1,5 @@
-from actuators.heating import Heating
-from sensors.temperaturesensor import TemperatureSensor
+from items.actuators.heating import Heating
+from items.sensors.temperaturesensor import TemperatureSensor
 from controllers.controller import Controller
 
 

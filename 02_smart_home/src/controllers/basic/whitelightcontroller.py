@@ -1,5 +1,5 @@
-from actuators.whitelight import WhiteLight
-from sensors.lightpushbutton import LightPushButton
+from items.actuators.whitelight import WhiteLight
+from items.sensors.lightpushbutton import LightPushButton
 from controllers.controller import Controller
 
 

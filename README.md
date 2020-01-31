@@ -1,3 +1,3 @@
 # Gruppe 2
 
-see [02_smart_home/src/README.md](./gruppe2/02_smart_home/src/README.md)
+see [02_smart_home/src/README.md](./02_smart_home/src/README.md)

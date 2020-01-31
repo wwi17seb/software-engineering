@@ -1,5 +1,5 @@
-from actuators import *
-from sensors import *
+from items.actuators import *
+from items.sensors import *
 from controllers.controller import Controller
 
 

@@ -1,4 +1,4 @@
-from item import Item
+from items.item import Item
 import abc
 
 # Observer Pattern: Sensor is Subject
