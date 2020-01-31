@@ -3,6 +3,8 @@
 This is not fully fledged smart home system since it only consists of example packages to demonstrate a certain architectural style - just like the motto: _Ceci n'est pas une smart home_.
 This includes structure of modules and packages as well as Design Patterns (creational, structural and behavioral) introduced by the _Gang of Four_.
 
+![Ceci n'est pas une smart home](../presentations/ceci-nest-pas-une-smart-home.png)
+
 ## Documentation
 
 There are three main classes/objects: sensors, actuators and controllers.
@@ -21,7 +23,7 @@ Controllers are packaged by use cases, e.g. there is one package for basic opera
 For testing there is a CLI to manipulate the sensor values and see whether the controllers update the actuators as expected.
 The CLI doesn't include functionality to add room, sensors or actuators because it doesn't make sense to change the structure of the smart home during runtime (smart home is static in it's structure of sensors and actuators).
 
-![UML Diagram of Smart Home](../presentations/uml_2020-01-23.svg)
+![UML Diagram of Smart Home](../presentations/uml_2020-01-31.svg)
 
 **`Sensor`**:
 The `getValue()`-method reads the current value and returns it.
@@ -55,7 +57,7 @@ This includes also the information which sensor invoked the method and what it's
 
 ## Metrics
 
-![temp](../presentations/package_structure.svg)
+![Package Structure with Metrics](../presentations/package_structure_2020-01-31.svg)
 
 
 ## Remarks and Ideas
