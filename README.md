@@ -1,48 +1,44 @@
-<<<<<<< HEAD
-# Gruppen
-* [Gruppe 1](https://github.com/WWI17SEB/software-engineering/tree/gruppe1)
-* [Gruppe 2](https://github.com/WWI17SEB/software-engineering/tree/gruppe2)
-* [Gruppe 3](https://github.com/WWI17SEB/software-engineering/tree/gruppe3)
-* [Gruppe 4](https://github.com/WWI17SEB/software-engineering/tree/gruppe4)
-* [Gruppe 5](https://github.com/WWI17SEB/software-engineering/tree/gruppe5) (später auf andere Gruppen verteilt)
+# Smarthome Projekt
+This repository is made to implement some classes for a simple smarthome system.
 
 # SOLID-Prinzipien
-* [Single Responsibility Principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/01_srp/presentations/SRP%20-%20The%20Single%20Responsibility%20Principle.pdf)
-* [Open–Closed Principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe5/Open-closed%20Principle.pdf)
-* [Liskov Substitution Principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/LSP.pdf)
-* [Interface Segregation Principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/01_SOLID-Prinzipien/SOLID-Prinzipien_ISP.pdf)
-* [Dependency Inversion Principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/01_DIP/DIP.pptx)
+### SRP (Single Responsibility Principle)
+* TODO
+### OCP (Open Closed Principle)
+* TODO
+### LSP (Liskov Substitution Principle)
+* TODO
+### ISP (Interface Segregation Principle)
+* TODO
+### DIP (Dependency Inversion Principle)
+* TODO
+
+# RCC & ASS
+### REP (Release Reuse Equivalency Principle)
+* TODO
+
+### CCP (Common Closure Principle)
+* TODO
+
+### CRP (Common Reuse Principle)
+* TODO
+
+### ADP (Acyclic Dependencies Principle)
+* TODO
+
+### SDP (Stable Dependencies Principle)
+* TODO
+
+### SAP (Stable Abstractions Principle)
+* TODO
+
 
 # Design Patterns
 ## Creational patterns
-* [Abstract Factory](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/02_Abstract_Factory/AbstractFactory.pptx)
-* [Builder](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/builder/presentations/builder.pdf)
-* [Factory Method](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/03_DesignPattern_FactoryMethod/DesignPattern_FactoryMethod.pdf)
-* [Prototype](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/Prototype%20Design%20Pattern/Prototype%20Design%20Pattern.pdf)
-* Singleton
+* TODO -> welche haben wir genutzt?
 
 ## Structural patterns
-* Adapter
-* [Bridge](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/Bridge%20Pattern/Bridge%20Pattern.pdf)
-* Composite
-* [Decorator](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/05_DesignPattern-Decorator/Design%20Pattern%20Decorator.pdf)
-* Facade
-* [Flyweight](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/flyweight/Flyweight-Pattern.pdf)
-* [Proxy](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/04_Proxy_und_CommandIntepreter/Proxy_und_Interpreter.pptx)
+* TODO -> welche haben wir genutzt?
 
 ## Behavioral patterns
-* [Chain of responsibility](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/07_DesignPattern_ChainOfResponsibility/DesignPattern_ChainOfResponsibility.pdf)
-* [Command](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/04_Proxy_und_CommandIntepreter/Proxy_und_Interpreter.pptx)
-* Interpreter
-* [Iterator](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/iterator/Iterator-Pattern.pdf)
-* Mediator
-* Memento <!-- Gruppe 4 -->
-* [Observer](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/06_DesignPattern_Observer/DesignPattern_Observer.pdf)
-* [State](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/state/State%20Pattern.pdf)
-* Strategy
-* [Template Method](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/Template%20Method%20Pattern/Template%20Method%20Pattern.pdf)
-* [Visitor](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/06_Visitor_Pattern/Pr%C3%A4sentation_Visitor_Pattern.pdf)
-=======
-# project_smarthome
-This repository is made to implement the classes for a smarthome system.
->>>>>>> 39e4049171fb4ccfa989ae15503cb775f3252999
+* TODO -> welche haben wir genutzt?
