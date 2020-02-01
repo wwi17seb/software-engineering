@@ -1,7 +1,7 @@
 # Smarthome Projekt
 This repository is made to implement some classes for a simple smarthome system.
 
-# SOLID-Prinzipien
+# SOLID - Prinzipien
 ### SRP (Single Responsibility Principle)
 * TODO
 ### OCP (Open Closed Principle)
@@ -13,7 +13,7 @@ This repository is made to implement some classes for a simple smarthome system.
 ### DIP (Dependency Inversion Principle)
 * TODO
 
-# RCC & ASS
+# RCC & ASS - Prinzipien
 ### REP (Release Reuse Equivalency Principle)
 * TODO
 
