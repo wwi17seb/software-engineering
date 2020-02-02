@@ -1,6 +1,6 @@
 from .icontroller import IController
 from .heatingcontroller import HeatingController
-from room import Room
+from house.room import Room
 from .lightingcontroller import LightingController
 from .ventilationcontroller import VentilationController
 

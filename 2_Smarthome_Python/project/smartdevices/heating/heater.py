@@ -11,5 +11,6 @@ class Heater(SmartDevice):
         print("Ich beginne auf ", target, " zu heizen.")
 
     def stopHeating(self):
-        self.state=0
-        print("Heizung ausgeschaltet")
+        if self.state==1:
+            self.state=0
+            print("Heizung ausgeschaltet")
