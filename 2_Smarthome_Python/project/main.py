@@ -2,16 +2,18 @@ from house.room import Room
 from controller.smarthome import Smarthome
 
 def raumHinzufuegen(smarthome):
+    smarthome.printAllRooms()
 
     print("\nBitte geben Sie den Namen des Raumes an:")
     name = input("Raumname: ")
     smarthome.addRoom(name)
 
 def raumEingabe(smarthome):
+    smarthome.printAllRooms()
 
-    print("\nBitte geben Sie den Namen des Raumes an:")
-    name = input("Raumname: ")
-    raum = smarthome.getRoomByName(name)
+    print("\nBitte geben Sie die Nummer des Raumes an:")
+    id = input("Raumnummer: ")
+    raum = smarthome.getRoomById(int(id))
 
     return raum
 
