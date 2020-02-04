@@ -5,10 +5,10 @@ from abc import ABC, abstractmethod
 class AbstractDevice(ABC):
 
     def __init__(self, name, description, serialNumber, conntections):
-        self.__name = name
-        self.__description = description
-        self.__serialNumber = serialNumber
-        self.__connections = conntections
+        self._name = name
+        self._description = description
+        self._serialNumber = serialNumber
+        self._connections = conntections
 
     @abstractmethod
     def turnOn(self):
@@ -19,19 +19,19 @@ class AbstractDevice(ABC):
         raise NotImplementedError
 
     def getName(self):
-        return self.__name
+        return self._name
 
     def setName(self, name):
-        self.__name = name
+        self._name = name
 
     def getDescription(self):
-        return self.__description
+        return self._description
 
     def setDescription(self, description):
-        self.__description = description
+        self._description = description
 
     def getSerialNumber(self):
-        return self.__serialNumber
+        return self._serialNumber
 
     def getConnections(self):
-        return self.__connections
+        return self._connections

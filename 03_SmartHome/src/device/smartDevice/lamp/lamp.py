@@ -16,27 +16,27 @@ class Lamp(SmartDevice):
         self.__sensor.turnOff()
 
     def collectData(self):
-        print("Smart lamp " + self.__name + " collects data from sensors...")
+        print("Smart lamp " + self.getName() + " collects data from sensors...")
         print("Temperature:", self.__sensor.getValue())
 
-    def exectuteCommand(self, command):
+    def executeCommand(self, command):
         self.__changeBrightness(command)
-        print("Smart lamp " + self.__name + " executed command " + str(command) + ".")
+        print("Smart lamp " + self.getName() + " executed command " + str(command) + ".")
 
     def turnOn(self):
         self.__sensor.turnOn()
-        print("Lamp " + self.__name + " turned on.")
+        print("Lamp " + self.getName() + " turned on.")
 
     def turnOff(self):
         self.__sensor.turnOff()
-        print("Lamp " + self.__name + " turned off.")
+        print("Lamp " + self.getName() + " turned off.")
 
     def update(self, sensor, value, status):
         if status == Sensor.ERROR or value != self.__maxTemp:
             print("Lamp", self.__name, "got temperature problems -> reducing brightness!")
             self.__brightness -= 1
         else:
-            print("Lamp", self.__name, "works fine.")
+            print("Lamp", self.getName(), "works fine.")
 
     def __changeBrightness(self, brightness):
         self.__brightness = brightness

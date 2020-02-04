@@ -94,3 +94,8 @@
 
 8. Visitor
 - wurde von Gruppe 1 vorgestellt
+
+
+# Tests
+
+Die Tests wurden mit Hilfe von doctest entwickelt. Damit diese funktionieren, ist es wichtig, dass 03_SmartHome/src als Source-Verzeichnis im Python-Path angegeben wird, da sonst die imports der Abhängigen module nicht funktioniert und der Test fehler aufwirft.

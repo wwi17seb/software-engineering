@@ -1,6 +1,6 @@
 from __future__ import annotations
 from abc import abstractmethod
-from ..abstractDevice import AbstractDevice
+from device.abstractDevice import AbstractDevice
 
 # uses principle LSP, SDP, OCP, SRP, CCP
 # uses Observer pattern with specified sensors
@@ -10,9 +10,9 @@ class Sensor(AbstractDevice):
 
     def __init__(self, name, description, serialNumber, connections, status, trigger):
         super(Sensor, self).__init__(name, description, serialNumber, connections)
-        self.__status = status
-        self.__trigger = trigger
-        self.__subscribers = dict()
+        self._status = status
+        self._trigger = trigger
+        self._subscribers = dict()
 
     @abstractmethod
     def measure(self):
@@ -23,21 +23,21 @@ class Sensor(AbstractDevice):
         raise NotImplementedError
 
     def setTrigger(self, trigger):
-        self.__trigger = trigger
+        self._trigger = trigger
 
     def register(self, who, callback=None):
         if callback is None:
             callback = getattr(who, 'update')
-        self.__subscribers[who] = callback
+        self._subscribers[who] = callback
 
     def unregister(self, who):
-        del self.__subscribers[who]
+        del self._subscribers[who]
 
     def dispatch(self):
-        if self.getValue() != self.__trigger:
-            self.__status = self.ERROR
+        if self.getValue() != self._trigger:
+            self._status = self.ERROR
         else:
-            self.__status = self.GOOD
+            self._status = self.GOOD
 
-        for subscriber, callback in self.__subscribers.items():
+        for subscriber, callback in self._subscribers.items():
             callback(self, self.getValue(), self.getStatus())

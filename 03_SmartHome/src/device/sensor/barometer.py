@@ -1,4 +1,4 @@
-from .sensor import Sensor
+from device.sensor.sensor import Sensor
 
 # uses principle LSP, SDP, OCP, SRP, CCP
 # implements Observer
@@ -9,13 +9,28 @@ class Barometer(Sensor):
         self.__currentPressure = 0  # in PSI
 
     def turnOn(self):
-        print("Barometer" + self.__name + "turned on.")
+        """ test turnOn execution
+        >>> sensor = Barometer('test', 'test sensor', '123', None, 1, None)
+        >>> sensor.turnOn()
+        Barometer test turned on.
+        """
+        print("Barometer " + self.getName() + " turned on.")
 
     def turnOff(self):
-        print("Barometer" + self.__name + "turned off.")
+        """ test turnOff execution
+        >>> sensor = Barometer('test', 'test sensor', '123', None, 1, None)
+        >>> sensor.turnOff()
+        Barometer test turned off.
+        """
+        print("Barometer " + self.getName() + " turned off.")
 
     def measure(self):
         self.__currentPressure = 25
 
     def getValue(self):
         return self.__currentPressure
+
+if __name__ == "__main__":
+    import doctest
+
+    doctest.testmod()
