@@ -1,5 +1,5 @@
 from house.room import Room
-from controller.smarthome import Smarthome
+from controller.basiccontroller.smarthome import Smarthome
 
 def raumHinzufuegen(smarthome):
     smarthome.printAllRooms()

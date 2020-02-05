@@ -24,7 +24,7 @@ This repository is made to implement some classes for a simple smarthome system.
 * TODO
 
 ### ADP (Acyclic Dependencies Principle)
-* TODO
+* Anhand der Package Metrik lässt sich erkennen, dass keine Zyklen zwischen den Packages besteht
 
 ### SDP (Stable Dependencies Principle)
 * TODO
@@ -35,10 +35,11 @@ This repository is made to implement some classes for a simple smarthome system.
 
 # Design Patterns
 ## Creational patterns
-* TODO -> welche haben wir genutzt?
+* hier hat sich für unser Beispiel kein Pattern geeignet
 
 ## Structural patterns
-* TODO -> welche haben wir genutzt?
+* 
 
 ## Behavioral patterns
-* TODO -> welche haben wir genutzt?
+* Observer --> wurde genutzt um ein "heatingobservable" zu erstellen. Gibt weiter sobald die Zieltemperatur erreicht ist.
+* Template Method --> Der Controller ist hierbei der abstrakte "worker" und alle spezifischen Controller greifen auf ihn zu.

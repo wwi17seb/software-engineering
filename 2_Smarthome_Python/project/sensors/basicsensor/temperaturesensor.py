@@ -1,6 +1,6 @@
-from .isensor import ISensor
-from .itarget import ITarget
-from .heatingobservable import heatingObservable
+from ..isensor import ISensor
+from ..itarget import ITarget
+from sensors.observables.heatingobservable import heatingObservable
 
 class TemperatureSensor(ISensor,ITarget):
 

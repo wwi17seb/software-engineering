@@ -1,4 +1,4 @@
-from .icontroller import IController
+from ..icontroller import IController
 from smartdevices.lighting.lamp import Lamp
 from smartdevices.lighting.shutter import Shutter
 

@@ -1,5 +1,5 @@
-from .iobservable import IObservable
-
+from ..iobservable import IObservable
+#Observer Verhaltensmuster
 class heatingObservable(IObservable):
 
     def update(self, hsensor):

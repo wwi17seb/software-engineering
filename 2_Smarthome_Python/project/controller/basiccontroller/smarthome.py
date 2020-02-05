@@ -1,4 +1,4 @@
-from .icontroller import IController
+from ..icontroller import IController
 from .heatingcontroller import HeatingController
 from house.room import Room
 from .lightingcontroller import LightingController

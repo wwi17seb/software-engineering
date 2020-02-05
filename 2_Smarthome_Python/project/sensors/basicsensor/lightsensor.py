@@ -1,5 +1,5 @@
-from .isensor import ISensor
-from .itarget import ITarget
+from ..isensor import ISensor
+from ..itarget import ITarget
 
 class LightSensor(ISensor,ITarget):
 

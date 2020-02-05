@@ -1,5 +1,5 @@
 from abc import ABC
-
+#Template Methode Verhaltensmuster
 class IController(ABC):
     def __init__(self,name):
         self.state=0

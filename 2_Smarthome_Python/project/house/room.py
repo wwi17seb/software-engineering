@@ -1,6 +1,6 @@
 import itertools
-from sensors.temperaturesensor import TemperatureSensor
-from sensors.lightsensor import LightSensor
+from sensors.basicsensor.temperaturesensor import TemperatureSensor
+from sensors.basicsensor.lightsensor import LightSensor
 
 class Room:
     newId = itertools.count()
