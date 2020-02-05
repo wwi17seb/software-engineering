@@ -46,7 +46,7 @@ class RoutineController:
         print("Now you need to add commands by selecting SmartDevices")
         self.selectRoom(newRoutine)
     
-    def selectRoom(routine):
+    def selectRoom(self, routine):
         print("In which room is your SmartDevice located? Select by Number!")
         for i in range(len(self.__RoomList)):
             print(i, "-", self.__RoomList[i].getName())
@@ -54,19 +54,44 @@ class RoutineController:
             if arg.isdigit():
                 arg = int(arg)
                 if 0 >= arg >= len(self.__RoomList):
-                    self.addCommand()
+                    print("There is no room with that Number!")
+                    self.selectRoom(routine)
                 else:
                     self.selectDevice(self.__RoomList[arg])
 
-    def selectDevice(room):
+    def selectDevice(self, room):
+        devices = room.getDevices(); 
         print("Which device should work in your routine?")
-            
+        for i in range(len(devices)):
+            print(i, "-", devices[i].getName())
+            arg = input()
+            if arg.isdigit():
+                arg = int(arg)
+                if 0 >= arg >= len(devices):
+                    print("There is no Device with that Number!")
+                    self.selectRoom(room)
+                else: 
+                    self.selectTask(devices[arg])
+        
+    def selectTask(self,device):
+        commands = device.getCommands()
+        print("Which command should the Device perform?")
+        for i in range(len(commands)):
+            print(i, "-", commands[i].getName())
+            arg = input()
+            if arg.isdigit():
+                arg = int(arg)
+                if 0 >= arg >= len(commands):
+                    print("There is no Command with that Number!")
+                    self.selectTask(device)
+                else: 
+                    print("You selected:")
+                    print(commands[arg])
 
-
-    def listRoutines(self): 
+    def listRoutines(self, room): 
         print("Listing Routines...")
     
-    def executeRoutine(self): 
+    def executeRoutine(self, room): 
         print("Executing: ")
 
 
