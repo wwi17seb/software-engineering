@@ -1,3 +1,4 @@
+# Smarthome
 # software-engineering
 ## SOLID-Prinzipien
 1. SRP (Single Responsibility Principle): Ein Klasse sollte eine Sache erledigen, und diese richtig.
@@ -17,27 +18,26 @@
 - wurde im Code verwendet (Interfaces wurden für einen speziellen Fall designed)
 
 5. DIP (Dependency Inversion Principle): Klasse definiert Interface zur Kommunikation.
-- wurde von Gruppe 1 vorgestellt
-- ???
+- wurde von Gruppe 1 vorgestellt(verwendet von sensor.py um die Schnittstelle der speziellen Sensoren zu definieren)
 
 ## RCC & ASS-Prinzipien
 1. REP (Release Reuse Equivalency Principle)
-- ???
+- kann nicht verwendet werden, ist auf ganzes System angepasst. Einzelne Komponenten sind nicht verwendbar so ohne Anpassungen in einem anderen System implementiert werden.
 
 2. CCP (Common Closure Principle)
-- wurde im Code verwendet
+- wurde im Code verwendet, zusammengehörende Klassen sind in einzelne Pakete gepackt wurden
 
 3. CRP (Common Reuse Principle)
-- wurde im Code nicht verwendet
+- wurde im Code nicht verwendet, da auch nur Teile aus einem Paket aufgerufen werden können
 
 4. ADP (Acyclic Dependencies Principle)
-- wurde im Code nicht verwendet
+- wurde im Code nicht verwendet, es kann Zyklen geben (grade bei CLI)
 
 5. SDP (Stable Dependencies Principle)
 - wurde im Code verwendet (z.B. Temperatursensor implementiert die Sensor-Klasse ---> Sensor-Klasse implementiert AbstractDevice-Klasse --> AbstractDevice-Klasse implementiert nichts)
 
 6. SAP (Stable Abstractions Principle)
-- wurde im Code verwendet (z.B. AbstractDevice-Klasse)
+- wurde im Code verwendet, je stabiler eine Klasse, desto abstrakter sind diese (z.B. AbstractDevice-Klasse)
 
 ## Entwurfsmuster
 ### Erzeugungsmuster
@@ -76,6 +76,7 @@
 
 2. Command
 - wurde von Gruppe 1 vorgestellt
+- wurde im Code verwendet um Routinen für die Devices zu erstellen
 
 3. Iterator
 - wurde von Gruppe 2 vorgestellt
@@ -85,6 +86,7 @@
 
 5. Observer
 - wurde von Gruppe 3 vorgestellt
+- wurde verwendet um Änderungen der Sensoren zu betrachten
 
 6. State
 - wurde von Gruppe 2 vorgestellt
