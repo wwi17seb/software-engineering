@@ -1,6 +1,6 @@
-from .icontroller import IController
+from ..icontroller import IController
 from .heatingcontroller import HeatingController
-from room import Room
+from house.room import Room
 from .lightingcontroller import LightingController
 from .ventilationcontroller import VentilationController
 
@@ -35,6 +35,13 @@ class Smarthome(IController):
                 return 1
         return 0
 
+    def getRoomById(self, id):
+        for room in self.rooms:
+            if room.id == id:
+                return room
+        print("Raum existiert nicht.")
+        return None
+
     def findRoomByName(self, name):
         for room in self.rooms:
             if room.name == name:
@@ -54,3 +61,8 @@ class Smarthome(IController):
         else:
             self.rooms.append(Room(name,self))
             print("Neuen Raum hinzugefügt: ",self.rooms[-1].id)
+
+    def printAllRooms(self):
+        print("\nAlle existierenden Räume:")
+        for room in self.rooms:
+            print(room.id,": ",room.name)

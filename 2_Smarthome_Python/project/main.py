@@ -1,17 +1,19 @@
-from room import Room
-from controller.smarthome import Smarthome
+from house.room import Room
+from controller.basiccontroller.smarthome import Smarthome
 
 def raumHinzufuegen(smarthome):
-   
+    smarthome.printAllRooms()
+
     print("\nBitte geben Sie den Namen des Raumes an:")
     name = input("Raumname: ")
     smarthome.addRoom(name)
 
 def raumEingabe(smarthome):
-   
-    print("\nBitte geben Sie den Namen des Raumes an:")
-    name = input("Raumname: ")
-    raum = smarthome.getRoomByName(name)
+    smarthome.printAllRooms()
+
+    print("\nBitte geben Sie die Nummer des Raumes an:")
+    id = input("Raumnummer: ")
+    raum = smarthome.getRoomById(int(id))
 
     return raum
 
@@ -165,7 +167,7 @@ def main():
     smarthome.ventilationcontroller.addWindow(smarthome.rooms[0])
     smarthome.ventilationcontroller.addWindow(smarthome.rooms[0])
 
-    
+
 
     #Raum lueften
 #    smarthome.ventilationcontroller.ventilateRoom(smarthome.heatingcontroller,smarthome.rooms[0])

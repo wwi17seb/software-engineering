@@ -1,4 +1,4 @@
-from .icontroller import IController
+from ..icontroller import IController
 from smartdevices.ventilation.window import Window
 
 class VentilationController(IController):

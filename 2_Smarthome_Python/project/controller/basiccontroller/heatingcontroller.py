@@ -1,4 +1,4 @@
-from .icontroller import IController
+from ..icontroller import IController
 from smartdevices.heating.heater import Heater
 
 class HeatingController(IController):
