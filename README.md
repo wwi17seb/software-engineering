@@ -1,5 +1,4 @@
 # Smarthome
-# software-engineering
 ## SOLID-Prinzipien
 
 1. [SRP](https://github.com/WWI17SEB/software-engineering/tree/gruppe2/01_srp) (Single Responsibility Principle): Ein Klasse sollte eine Sache erledigen, und diese richtig.
