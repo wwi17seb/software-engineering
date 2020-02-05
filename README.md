@@ -23,14 +23,14 @@ This repository is made to implement some classes for a simple smarthome system.
 ### CRP (Common Reuse Principle)
 * TODO
 
-### ADP (Acyclic Dependencies Principle)
+### ADP (Acyclic Dependencies Principle) -> siehe Package-Metrik
 * Anhand der Package Metrik lässt sich erkennen, dass keine Zyklen zwischen den Packages besteht
 
 ### SDP (Stable Dependencies Principle)
-* TODO
+* Unsere Packets hängen nur von Packets höherer Stabilität ab (Instabilität nimmt zu)
 
 ### SAP (Stable Abstractions Principle)
-* TODO
+* Die instabilen Packages enthalten bei uns keine Abstrackten Klassen.
 
 
 # Design Patterns
