@@ -1,4 +1,5 @@
-from .sensor import Sensor
+from device.sensor.sensor import Sensor
+
 
 # uses principle LSP, SDP, OCP, SRP, CCP
 # implements Observer
@@ -9,13 +10,30 @@ class SmokeSensor(Sensor):
         self.__smoke = False
 
     def turnOn(self):
-        print("Smoke sensor" + self.__name + "turned on.")
+        """ test turnOn execution
+        >>> sensor = SmokeSensor('test', 'test sensor', '123', None, 1, None)
+        >>> sensor.turnOn()
+        Smoke sensor test turned on.
+        """
+        print("Smoke sensor " + self.getName() + " turned on.")
 
     def turnOff(self):
-        print("Smoke sensor" + self.__name + "turned off.")
+        """ test turnOff execution
+        >>> sensor = SmokeSensor('test', 'test sensor', '123', None, 1, None)
+        >>> sensor.turnOff()
+        Smoke sensor test turned off.
+        """
+        print("Smoke sensor " + self.getName() + " turned off.")
 
     def measure(self):
         self.__smoke = True
+        return self.__smoke
 
     def getValue(self):
         return self.__smoke
+
+
+if __name__ == "__main__":
+    import doctest
+
+    doctest.testmod()

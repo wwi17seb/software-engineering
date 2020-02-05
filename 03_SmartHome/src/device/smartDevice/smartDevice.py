@@ -10,7 +10,7 @@ class SmartDevice(AbstractDevice):
         raise NotImplementedError
 
     @abstractmethod
-    def exectuteCommand(self, command):
+    def executeCommand(self, command):
         raise NotImplementedError
 
     @abstractmethod
