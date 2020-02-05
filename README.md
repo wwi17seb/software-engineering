@@ -32,6 +32,8 @@ This repository is made to implement some classes for a simple smarthome system.
 ### SAP (Stable Abstractions Principle)
 * Die instabilen Packages enthalten bei uns keine Abstrackten Klassen.
 
+![Paketstruktur mit Metriken](2_Smarthome_Python/packetmetriken.png)
+
 
 # Design Patterns
 ## Creational patterns
