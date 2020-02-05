@@ -3,15 +3,15 @@ This repository is made to implement some classes for a simple smarthome system.
 
 # SOLID - Prinzipien
 ### SRP (Single Responsibility Principle)
-* TODO
+* konkrete Klassen haben nur eine spezielle Aufgabe z.B. heatingcontroller steuert einzig und allein die Heizung. Prinzip erfüllt.
 ### OCP (Open Closed Principle)
-* TODO
+* Implementierung der Klassen von abstrakt zu immer spezifischer ist gegeben. Damit ist das Prinzip erfüllt.
 ### LSP (Liskov Substitution Principle)
-* TODO
+* jede Subklasse besitzt alle Methoden der zugehörigen Superklasse damit ist das LSP erfüllt.
 ### ISP (Interface Segregation Principle)
-* TODO
+* Um dieses Prinzip zu erfüllen wurde das itarget Interface erstellt. Dies wird benötigt, da der Licht Lichtsensor keinen Zielwert benötigt
 ### DIP (Dependency Inversion Principle)
-* TODO
+* durch smarthome als input für Konstruktor wird möglicherweise gegen DIP verstoßen, hier im Kontext jedoch zu missachten, da raum nicht unabhängig vom Smarthome existieren sollte
 
 # RCC & ASS - Prinzipien
 ### REP (Release Reuse Equivalency Principle)
