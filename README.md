@@ -47,6 +47,8 @@ Neben den hier aufgezählten Prinzipien sind die vorgestellten Prinzipien und Mu
 - wurde im Code verwendet
 - je stabiler eine Klasse, desto abstrakter sind diese (z.B. AbstractDevice-Klasse)
 
+![Alt text](03_SmartHome/design/Metriken.svg)
+
 ## Entwurfsmuster
 ### Erzeugungsmuster
 1. Singleton
@@ -62,8 +64,6 @@ Neben den hier aufgezählten Prinzipien sind die vorgestellten Prinzipien und Mu
 - wurde von Gruppe 3 vorgestellt
 - wurde verwendet um Änderungen der Sensoren zu betrachten
 - --> Sensor schickt Updates an registrierte Geräte
-
-![Alt text](03_SmartHome/design/Metriken.svg)
 
 ## Klassendiagramm
 
