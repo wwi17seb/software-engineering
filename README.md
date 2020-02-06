@@ -73,7 +73,7 @@ Neben den hier aufgezählten Prinzipien sind die vorgestellten Prinzipien und Mu
 
 Die Tests wurden mit Hilfe von doctest entwickelt. Damit diese funktionieren, ist es wichtig, dass [03_SmartHome/src](03_SmartHome/src) als Source-Verzeichnis im Python-Path angegeben wird, da sonst die imports der Abhängigen module nicht funktioniert und der Test Fehler aufwirft.
 
-Weiterhin wurde eine Klasse [test.py](03_SmartHome/src/test.py) angelegt, welche die funktionalitäten des SMART-Homes darstellen soll. Sie arbeitet also nicht als Test sondern dient lediglich demonstrativen Zwecken.
+Weiterhin wurde eine Datei [test.py](03_SmartHome/src/test.py) angelegt, welche die funktionalitäten des SMART-Homes darstellen soll. Sie arbeitet also nicht als Test sondern dient lediglich demonstrativen Zwecken.
 
 ## CLI
 Das SMART-Home wurde als Command-Line-Anwendung geschrieben. Sie ist Nutzbar, wenn die [app.py](03_SmartHome/src/app.py) Datei im SMART-Home src Ordner ausgeführt wird. Eine Speicherung der eingebenen Daten erfolgt nicht. 
