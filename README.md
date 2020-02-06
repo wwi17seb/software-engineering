@@ -60,7 +60,7 @@ Neben den hier aufgezählten Prinzipien sind die vorgestellten Prinzipien und Mu
 - wurde von Gruppe 1 vorgestellt
 - wurde im Code verwendet um Routinen für die Devices zu erstellen
 
-2. [Observer](06_DesignPattern_Observer)
+2. [Observer](https://github.com/WWI17SEB/software-engineering/tree/gruppe3/06_DesignPattern_Observer)
 - wurde von Gruppe 3 vorgestellt
 - wurde verwendet um Änderungen der Sensoren zu betrachten
 - --> Sensor schickt Updates an registrierte Geräte
