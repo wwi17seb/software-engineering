@@ -47,61 +47,18 @@
 
 ## Entwurfsmuster
 ### Erzeugungsmuster
-1. [Abstract Factory](https://github.com/WWI17SEB/software-engineering/tree/gruppe1/02_Abstract_Factory)
-- wurde von Gruppe 1 vorgestellt
-
-2. [Builder](https://github.com/WWI17SEB/software-engineering/tree/gruppe2/03_design_patterns/builder)
-- wurde von Gruppe 2 vorgestellt
-
-3. [Factory Method](https://github.com/WWI17SEB/software-engineering/tree/gruppe3/03_DesignPattern_FactoryMethod)
-- wurde von Gruppe 3 vorgestellt
-
-4. [Prototype](https://github.com/WWI17SEB/software-engineering/tree/gruppe4/1_Pr%C3%A4sentationen/Prototype%20Design%20Pattern)
-- wurde von Gruppe 4 vorgestellt
-
-5. Singleton
+1. Singleton
 - wurde von Gruppe 5 vorgestellt
 - wurde im Code verwendet (z.B. House)
 
-### Strukturmuster
-1. [Bridge](https://github.com/WWI17SEB/software-engineering/tree/gruppe4/1_Pr%C3%A4sentationen/Bridge%20Pattern) 
-- wurde von Gruppe 4 vorgestellt
-
-2. [Decorator](https://github.com/WWI17SEB/software-engineering/tree/gruppe3/05_DesignPattern_Decorator)
-- wurde von Gruppe 3 vorgestellt
-
-3. [Flyweight](https://github.com/WWI17SEB/software-engineering/tree/gruppe2/03_design_patterns/flyweight)
-- wurde von Gruppe 2 vorgestellt
-
-4. [Proxy](https://github.com/WWI17SEB/software-engineering/tree/gruppe1/04_Proxy_und_Command) 
-- wurde von Gruppe 1 vorgestellt
-
 ### Verhaltensmuster
-1. [Chain of Responsibility](https://github.com/WWI17SEB/software-engineering/tree/gruppe3/07_DesignPattern_ChainOfResponsibility)
-- wurde von Gruppe 3 vorgestellt
-
-2. [Command](https://github.com/WWI17SEB/software-engineering/tree/gruppe1/04_Proxy_und_Command)
+1. [Command](https://github.com/WWI17SEB/software-engineering/tree/gruppe1/04_Proxy_und_Command)
 - wurde von Gruppe 1 vorgestellt
 - wurde im Code verwendet um Routinen für die Devices zu erstellen
 
-3. [Iterator](https://github.com/WWI17SEB/software-engineering/tree/gruppe2/03_design_patterns/iterator)
-- wurde von Gruppe 2 vorgestellt
-
-4. [Memento](https://github.com/WWI17SEB/software-engineering/tree/gruppe4/1_Pr%C3%A4sentationen/Memento)
-- wurde von Gruppe 4 vorgestellt
-
-5. [Observer](https://github.com/WWI17SEB/software-engineering/tree/gruppe3/06_DesignPattern_Observer)
+2. [Observer](https://github.com/WWI17SEB/software-engineering/tree/gruppe3/06_DesignPattern_Observer)
 - wurde von Gruppe 3 vorgestellt
 - wurde verwendet um Änderungen der Sensoren zu betrachten
-
-6. [State](https://github.com/WWI17SEB/software-engineering/tree/gruppe2/03_design_patterns/state)
-- wurde von Gruppe 2 vorgestellt
-
-7. [Template Method](https://github.com/WWI17SEB/software-engineering/tree/gruppe4/1_Pr%C3%A4sentationen/Template%20Method%20Pattern)
-- wurde von Gruppe 4 vorgestellt
-
-8. [Visitor](https://github.com/WWI17SEB/software-engineering/tree/gruppe1/06_Visitor_Pattern)
-- wurde von Gruppe 1 vorgestellt
 
 # Tests
 
