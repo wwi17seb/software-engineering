@@ -6,7 +6,7 @@
 
 - Solid Prinzip
   - Interface Segregation Principle ([Slides](./01_SOLID-Prinzipien/SOLID-Prinzipien_ISP.pdf) | Source Code in der Powerpoint)
-- Smart Home ([Source Code](./02_SmartHome/smarthome-python) |[UML-Diagramm](./02_SmartHome/UML-SmartHome.pdf))
+- Smart Home ([Source Code](./02_SmartHome/smarthome-python) |[UML-Diagramm Designphase](./02_SmartHome/UML-SmartHome.pdf) [Implementation](./02_SmartHome/smarthome-python/UML%20smarthome.pdf))
 - Design Patterns
   - Factory Method ([Slides](./03_design_patterns/builder/presentations/builder.pdf) | [Source Code](./03_DesignPattern_FactoryMethod/Codebeispiel_FactoryMethod.py))
   - Decorator ([Slides](./05_DesignPattern_Decorator/Design_Pattern_Decorator.pdf) | [Source Code](./05_DesignPattern_Decorator/decorator.py))
@@ -33,7 +33,7 @@
 
 ### 4. Interface Segregation Principle (ISP):
 - Beschreibung: Zu große Schnittstellen werden in mehrere Schnittstellen aufgeteilt, falls implementierende Klassen unnötige Methoden haben müssen
-- Vorstellung: Gruppe 4
+- Vorstellung: Gruppe 3 ([unsere Slides](./01_SOLID-Prinzipien/SOLID-Prinzipien_ISP.pdf))
 - Verwendung: Erstellung von Interfaces (siehe beispielsweise klasse gegenstand.py; Kennzeichnung mit abc siehe Code)
 
 
@@ -41,32 +41,6 @@
 - Beschreibung: Abhängigkeit von Modulen. Module höherer Ebenen sollten nicht von Modulen niedrigerer Ebenen abhängen
 - Vorstellung: Gruppe 1
 - Verwendung: Erfüllt, da Oberklassen definiert wurden und Unterklassen daraus ableiten und nicht andersrum (Siehe Beispiele in Prinzip 3)
-
-## RCC & ASS-Prinzipien: 
-### Release Reuse Equivalency Principle (REP):
-### Common Closure Principle (CCP):
-### Common Reuse Principle (CRP):
-### Common Reuse Principle (CRP):
-### Acyclic Dependencies Principle (ADP):
-### Stable Dependencies Principle (SDP):
-### Stable Abstractions Principle (SAP):
-
-
-## Design-Patterns:
-### Erzeugungsmuster:
-### Verhaltensmuster:
-
-## Klassendiagramm:
-
-## Durchführung von Test in SMARTHOME
-
-
-
-
-
-
-
-
 
 
 
