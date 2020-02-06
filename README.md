@@ -1,7 +1,6 @@
-# Smarthome
-
 Neben den hier aufgezählten Prinzipien sind die vorgestellten Prinzipien und Muster in den einzelnen unterordnern des Branches zu finden (bspw. 01_DIP). Hierzu wurden für die Vorträge einzelne Codebeispiele angelegt, welche nicht direkt mit dem SMART-Home Projekt in Verbindung stehen.
 
+# Smarthome
 ## SOLID-Prinzipien
 
 1. [SRP](https://github.com/WWI17SEB/software-engineering/tree/gruppe2/01_srp) (Single Responsibility Principle): Ein Klasse sollte eine Sache erledigen, und diese richtig.
@@ -63,6 +62,10 @@ Neben den hier aufgezählten Prinzipien sind die vorgestellten Prinzipien und Mu
 - wurde von Gruppe 3 vorgestellt
 - wurde verwendet um Änderungen der Sensoren zu betrachten
 - --> Sensor schickt Updates an registrierte Geräte
+
+![Alt text](03_SmartHome/design/Metriken.svg)
+
+![Alt text](03_SmartHome/design/UML_Diagramm_SmartHome.svg)
 
 ## Tests für das SMART HOME
 
