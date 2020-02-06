@@ -1,0 +1,19 @@
+The ``root`` module
+======================
+
+Using ``Schalter``
+-------------------
+
+    >>> import steuerzentrale, raum, haus
+    >>> from geräte import beleuchtung
+    >>> from sensoren import schalter
+    >>> hub = steuerzentrale.Steuerzentrale()
+    >>> heim = haus.Haus("HomeSweetHome", 330)
+    >>> zimmer = raum.Raum ("Wohnzimmer", 2.30, heim)
+    >>> lampe1 = beleuchtung.Beleuchtung(zimmer, "Stehlampe", hub)
+    >>> switch = schalter.Schalter(lampe1, "Switch")
+    >>> switch.zustand
+    False
+    >>> switch.setState(True)
+    >>> switch.messen()
+    True

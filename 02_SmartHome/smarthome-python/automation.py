@@ -5,15 +5,13 @@ class Automation:
         self.input = _input #ein Gegenstand
         self.output = _output #ein Gegenstand
         self.typ = typ
-        self.gegenstand_liste = list()
+        self.gegenstand_liste = list([_output.name])
     
     def ausführen(self):
-        print("Automation ausgelöst von {0}: ".format(self.input))
+        print("Automation ausgelöst von {0}: ".format(self.input.name))
         self.output.anschalten()
 
-    def bearbeiten(self,automation):
-        input_string = input("Füge Gegenstände getrennt mit Kommazeichen hinzu : ")
-        self.gegenstand_liste += input_string.split(",")
+    def bearbeiten(self,input = None, output = None):
+        self.gegenstand_liste += [output.name]
+        self.input = input
         print (self.gegenstand_liste)
-
-        

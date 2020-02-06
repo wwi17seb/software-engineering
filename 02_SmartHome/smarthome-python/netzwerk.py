@@ -1,3 +1,6 @@
+# Gemäß dem Single-Responsibility-Prinzip hat diese Klasse nur die 
+# Verantwortung die Netzwerkfunktionalität zu realisieren.
+
 class Netzwerk:
 
     def __init__(self, name, zugangsdaten, netzwerkSettings):

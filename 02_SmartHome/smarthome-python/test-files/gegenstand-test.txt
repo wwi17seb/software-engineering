@@ -1,0 +1,20 @@
+The ``root`` module
+======================
+
+Using ``Gegenstand``
+-------------------
+
+    >>> from GegenstandTest import gegenstandTest
+    >>> from raum import Raum
+    >>> from steuerzentrale import Steuerzentrale
+    >>> from haus import Haus
+    >>> myHouse = Haus("MyHouse",120)
+    >>> room1 = Raum("Küche",2.5,myHouse)
+    >>> controlUnit = Steuerzentrale()
+    >>> gegenstand1 = gegenstandTest(room1, 'test-gegenstand', controlUnit)
+    >>> gegenstand1.anschalten()
+    test-gegenstand ist an
+    >>> gegenstand1.ausschalten()
+    test-gegenstand ist aus
+    >>> gegenstand1.verbinden()
+    test-gegenstand wurde zum System Hauszentrale hinzugefügt.

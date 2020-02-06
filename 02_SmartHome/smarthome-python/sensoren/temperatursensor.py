@@ -4,5 +4,6 @@ class Temperatursensor(Sensor):
     def aenderungenUeberwachen(self):
         self.temperatur = 23.1
     
-    def sendeStatus(self):
+    def messen(self):
+        self.aenderungenUeberwachen()
         return self.temperatur

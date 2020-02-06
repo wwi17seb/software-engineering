@@ -2,9 +2,9 @@ from sensoren.sensor import Sensor
 
 class Bewegungssensor(Sensor):
 
-    def __init__(self, data = None):
+    def __init__(self, gerät, raum, name, steuerzentrale, data=None):
         #Konstruktor
-        self.data = data
+        super().__init__(gerät, raum, name, steuerzentrale, data=None)
         self.bewegungErkannt = False
 
     def messen (self):

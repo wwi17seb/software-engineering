@@ -1,7 +1,8 @@
 class Steuerzentrale:
-    def __init__(self, data = None):
+    def __init__(self, name = "Hauszentrale", data = None):
         #Konstruktor
         self.data = data
+        self.name = name
         self.gegenstaende = list()
         
     def steuernRaum(self, raum, aktion):
