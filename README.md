@@ -19,7 +19,7 @@
 ### 1. Single-Responsibility-Prinzip (SRP)
 - Beschreibung: Jede Klasse oder jedes Modul solltein einem Programm nur für einen einzigen Teil der Funktionalität dieses Programms verantwortlich sein 
 - Vorstellung: Gruppe 2
-- Verwendung: Erfüllt, besonders in Klasse raum.py (Gemäß SRP hat diese Klasse nur die Verantwortung die Raumfunktionalität zu realisieren) und Klasse netzwerk.py (Gemäß SRP hat diese Klasse nur die Verantwortung die Netzwerkfunktionalität zu realisieren) (Die aufgeführten Klassen sind Beispiele dafür, dass sie nur eine bestimmte Aufgabe absolvieren: Raum- und Netzwerkfunktionalität)
+- Verwendung: Erfüllt, besonders in Klasse Raum (Gemäß SRP hat diese Klasse nur die Verantwortung die Raumfunktionalität zu realisieren) und Klasse Netzwerk (Gemäß SRP hat diese Klasse nur die Verantwortung die Netzwerkfunktionalität zu realisieren) (Die aufgeführten Klassen sind Beispiele dafür, dass sie nur eine bestimmte Aufgabe absolvieren: Raum- und Netzwerkfunktionalität)
 
 ### 2. Open Closed Principle (ORP)
 - Beschreibung: Erweiterbarkeit von bestehender Software
@@ -29,12 +29,12 @@
 ### 3. Loskov Substitution Principle (LSP)
 - Beschreibung: Objekte einer Oberklasse durch Objekte ihrer Unterklassen ersetzt werden können, ohne die Anwendung zu zerstören
 - Vorstellung: Gruppe 4
-- Verwendung: Erfüllt (Beispiele: Klassen feuermelder.py, bewegungssensor.py temperatursensor.py leiten von der Oberklasse sensor.py ab; lautsprecher.pyheizung.py und heizung.py leiten von der Oberklasse geräte.py ab)
+- Verwendung: Erfüllt (Beispiele: Klassen Feuermelder, Bewegungssensor, Temperatursensor leiten von der Oberklasse Sensor ab; Lautsprecher, Heizung und Beleuchtung leiten von der Oberklasse Geräte ab)
 
 ### 4. Interface Segregation Principle (ISP)
 - Beschreibung: Zu große Schnittstellen werden in mehrere Schnittstellen aufgeteilt, falls implementierende Klassen unnötige Methoden haben müssen
 - Vorstellung: Gruppe 3 ([unsere Slides](./01_SOLID-Prinzipien/SOLID-Prinzipien_ISP.pdf))
-- Verwendung: Erstellung von Interfaces (siehe beispielsweise klasse gegenstand.py; Kennzeichnung mit abc siehe Code)
+- Verwendung: Erstellung von Interfaces (siehe beispielsweise Klasse Gegenstand; Kennzeichnung mit abc siehe Code)
 
 
 ### 5. Dependency Inversion Principle (DIP)
@@ -74,7 +74,7 @@ Siehe Bild:
 ### Erzeugungsmuster
 Factory Method:
 - Beschreibung: Das Muster beschreibt, wie ein Objekt durch Aufruf einer Methode anstatt durch direkten Aufruf eines Konstruktors erzeugt wird
-- Verwendung: Erfüllt, siehe [Coding](./03_DesignPattern_FactoryMethod/Codebeispiel_FactoryMethod.py) 
+- Verwendung: Erfüllt, siehe [Coding Beispiel](./03_DesignPattern_FactoryMethod/Codebeispiel_FactoryMethod.py) bzw. [Coding im Projekt](./02_SmartHome/smarthome-python/GeräteFactory.py)
 
 ### Strukturmuster
 Decorator:
