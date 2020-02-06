@@ -19,7 +19,7 @@ Neben den hier aufgezählten Prinzipien sind die vorgestellten Prinzipien und Mu
 - wurde von Gruppe 3 vorgestellt
 - wurde im Code verwendet (Interfaces wurden für einen speziellen Fall designed)
 
-5. [DIP](https://github.com/WWI17SEB/software-engineering/tree/gruppe1/01_DIP) (Dependency Inversion Principle): Klasse definiert Interface zur Kommunikation.
+5. [DIP](01_DIP) (Dependency Inversion Principle): Klasse definiert Interface zur Kommunikation.
 - wurde von Gruppe 1 vorgestellt(verwendet von sensor.py um die Schnittstelle der speziellen Sensoren zu definieren)
 
 ## RCC & ASS-Prinzipien
@@ -56,11 +56,11 @@ Neben den hier aufgezählten Prinzipien sind die vorgestellten Prinzipien und Mu
 - wurde im Code verwendet (z.B. House)
 
 ### Verhaltensmuster
-1. [Command](https://github.com/WWI17SEB/software-engineering/tree/gruppe1/04_Proxy_und_Command)
+1. [Command](04_Proxy_und_Command)
 - wurde von Gruppe 1 vorgestellt
 - wurde im Code verwendet um Routinen für die Devices zu erstellen
 
-2. [Observer](https://github.com/WWI17SEB/software-engineering/tree/gruppe3/06_DesignPattern_Observer)
+2. [Observer](06_DesignPattern_Observer)
 - wurde von Gruppe 3 vorgestellt
 - wurde verwendet um Änderungen der Sensoren zu betrachten
 - --> Sensor schickt Updates an registrierte Geräte
