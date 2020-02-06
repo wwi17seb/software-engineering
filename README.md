@@ -29,7 +29,7 @@ Neben den hier aufgezählten Prinzipien sind die vorgestellten Prinzipien und Mu
 
 2. CCP (Common Closure Principle)
 - wurde im Code verwendet
-- zusammengehörige Klassen sind in entsprechende Pakete gepackt
+- zusammengehörige Klassen sind in entsprechende Pakete gepackt (z.B. alle Klassen die zu Sensor zugehörig sind wurden in ein Paket vereint)
 
 3. CRP (Common Reuse Principle)
 - wurde im Code nicht verwendet
