@@ -44,5 +44,6 @@
 
 
 
+## Doctest
 
-
+Die Klassen werden einzeln durch in Textdateien ausgelagerte Testskripte getestet. Alle Tests kann man im Terminal mit `python tests.py -v` starten.
