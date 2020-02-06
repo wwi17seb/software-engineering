@@ -25,7 +25,7 @@ Neben den hier aufgezählten Prinzipien sind die vorgestellten Prinzipien und Mu
 ## RCC & ASS-Prinzipien
 1. REP (Release Reuse Equivalency Principle)
 - kann nicht verwendet werden, ist auf das spezielle Smarthome-System angepasst
-- einzelne Komponenten sind nicht verwendbar ohne Anpassungen an diesen, um die Komponente in ein anderes System zu implementieren
+- die Komponenten sind nur mit Anpassungen in einem anderen System implementierbar
 
 2. CCP (Common Closure Principle)
 - wurde im Code verwendet
