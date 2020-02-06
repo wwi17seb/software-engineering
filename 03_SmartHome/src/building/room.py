@@ -13,6 +13,11 @@ class Room():
     def getDevices(self):
         return self.__devices
 
+    def removeDevice(self, name):
+        for i in range(self.__devices):
+            if self.__devices[i].getName() == name:
+                self.__devices.pop(i)
+
     def setHeight(self, height):
         self.__height = height
 

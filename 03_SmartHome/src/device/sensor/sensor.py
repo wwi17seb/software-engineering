@@ -25,6 +25,9 @@ class Sensor(AbstractDevice):
     def setTrigger(self, trigger):
         self._trigger = trigger
 
+    def getStatus(self):
+        return self._status
+
     def register(self, who, callback=None):
         if callback is None:
             callback = getattr(who, 'update')
@@ -39,5 +42,6 @@ class Sensor(AbstractDevice):
         else:
             self._status = self.GOOD
 
+        print("Sensor", self.getName(), "dispatching data...")
         for subscriber, callback in self._subscribers.items():
             callback(self, self.getValue(), self.getStatus())

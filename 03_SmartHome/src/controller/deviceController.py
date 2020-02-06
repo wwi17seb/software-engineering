@@ -9,3 +9,5 @@ class DeviceController:
 
     def deviceConfiguration(self):
         print("What do you want to do with your device:", self.__device.getName())
+
+        # TODO Add device configuration stuff....

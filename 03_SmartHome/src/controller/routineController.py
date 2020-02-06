@@ -4,7 +4,7 @@ from controller.roomController import RoomController
 from device.smartDevice.kitchen.fridge import Fridge
 from device.smartDevice.lamp.lamp import Lamp
 from connection.wlan import WLAN
-from connection.bluetooth import BlueTooth
+from connection.bluetooth import Bluetooth
 from controller.deviceController import DeviceController
 from routinesAndCommands.routine import Routine
 

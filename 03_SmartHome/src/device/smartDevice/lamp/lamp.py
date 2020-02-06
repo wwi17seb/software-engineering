@@ -1,7 +1,7 @@
 from device.smartDevice.smartDevice import SmartDevice
 from device.sensor.temperatureSensor import TemperatureSensor
 from device.sensor.sensor import Sensor
-from routinesAndCommands import abstractCommand, commands
+from routinesAndCommands.commands import turnOn, turnOff
 
 # uses principle principle SDP, OCP, SRP, CCP
 class Lamp(SmartDevice):
@@ -11,7 +11,7 @@ class Lamp(SmartDevice):
         self.__brightness = brightness
         self.__maxTemp = 40
         self.__sensor = TemperatureSensor(name, description, None, None, 1, self.__maxTemp)
-        self.__sensor.register(self, self.update())
+        self.__sensor.register(self, self.update)
         self.__commands = {turnOn(self), turnOff(self)}
         self.__sensor.turnOff()
 

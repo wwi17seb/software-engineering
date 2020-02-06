@@ -1,7 +1,11 @@
 from .connection import Connection
 
 # uses principle principle SDP, OCP, SRP, CCP, LSP
-class BlueTooth(Connection):
+class Bluetooth(Connection):
+
+    def __init__(self):
+        super(Bluetooth, self).__init__()
+
     def connect(self, device):
         pass
 

@@ -1,7 +1,7 @@
 from device.smartDevice.kitchen.fridge import Fridge
 from device.smartDevice.lamp.lamp import Lamp
 from connection.wlan import WLAN
-from connection.bluetooth import BlueTooth
+from connection.bluetooth import Bluetooth
 from controller.deviceController import DeviceController
 
 # uses principle principle SDP, OCP, SRP, CCP
@@ -90,7 +90,7 @@ class RoomController:
             if connection == "w":
                 con = WLAN()
             elif connection == "b":
-                con = BlueTooth()
+                con = Bluetooth()
             connections.append(con)
 
             if arg == 1:

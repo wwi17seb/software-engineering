@@ -84,11 +84,18 @@ class Oven(SmartDevice):
         >>> oven.update(None, 50, 2)
         Oven test got temperature problems!
         """
-        if status == Sensor.ERROR or value > self.__maxTemp or value != self.__temperature:
-            print("Oven", self.getName(), "got temperature problems!")
-            self.__temperature = value
+        if sensor == self.__sensor:
+            if status == Sensor.ERROR or value > self.__maxTemp or value != self.__temperature:
+                print("Oven", self.getName(), "got temperature problems!")
+                self.__temperature = value
+            else:
+                print("Oven", self.getName(), "temperature is", value)
         else:
-            print("Oven", self.getName(), "temperature is", value)
+            if status == Sensor.GOOD:
+                print("Oven: "+ self.getName() + " registert sensor " + sensor.getName() + " status is good.")
+            else:
+                print("Oven: "+ self.getName() + " registert sensor " + sensor.getName() + " status is bad!! Please help!! :D")
+
 
     def setTemperature(self, temp):
         self.__temperature = temp
