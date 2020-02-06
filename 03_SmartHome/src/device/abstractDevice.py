@@ -1,5 +1,6 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
+from routinesAndCommands.commands import turnOn, turnOff
 
 # uses SRP, OCP, LSP(Oberklasse), 
 class AbstractDevice(ABC):
@@ -9,6 +10,7 @@ class AbstractDevice(ABC):
         self._description = description
         self._serialNumber = serialNumber
         self._connections = conntections
+        self._commands = [turnOn(self), turnOff(self)]
 
     @abstractmethod
     def turnOn(self):
@@ -35,3 +37,6 @@ class AbstractDevice(ABC):
 
     def getConnections(self):
         return self._connections
+
+    def getCommands(self):
+        return self._commands

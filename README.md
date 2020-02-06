@@ -1,4 +1,7 @@
 # Smarthome
+
+Neben den hier aufgezählten Prinzipien sind die vorgestellten Prinzipien und Muster in den einzelnen unterordnern des Branches zu finden (bspw. 01_DIP). Hierzu wurden für die Vorträge einzelne Codebeispiele angelegt, welche nicht direkt mit dem SMART-Home Projekt in Verbindung stehen.
+
 ## SOLID-Prinzipien
 
 1. [SRP](https://github.com/WWI17SEB/software-engineering/tree/gruppe2/01_srp) (Single Responsibility Principle): Ein Klasse sollte eine Sache erledigen, und diese richtig.
@@ -59,7 +62,13 @@
 2. [Observer](https://github.com/WWI17SEB/software-engineering/tree/gruppe3/06_DesignPattern_Observer)
 - wurde von Gruppe 3 vorgestellt
 - wurde verwendet um Änderungen der Sensoren zu betrachten
+- --> Sensor schickt Updates an registrierte Geräte
 
-# Tests
+## Tests für das SMART HOME
 
-Die Tests wurden mit Hilfe von doctest entwickelt. Damit diese funktionieren, ist es wichtig, dass 03_SmartHome/src als Source-Verzeichnis im Python-Path angegeben wird, da sonst die imports der Abhängigen module nicht funktioniert und der Test Fehler aufwirft.
+Die Tests wurden mit Hilfe von doctest entwickelt. Damit diese funktionieren, ist es wichtig, dass [03_SmartHome/src](03_SmartHome/src) als Source-Verzeichnis im Python-Path angegeben wird, da sonst die imports der Abhängigen module nicht funktioniert und der Test Fehler aufwirft.
+
+Weiterhin wurde eine Klasse [test.py](03_SmartHome/src/test.py) angelegt, welche die funktionalitäten des SMART-Homes darstellen soll. Sie arbeitet also nicht als Test sondern dient lediglich demonstrativen Zwecken.
+
+## CLI
+Das SMART-Home wurde als Command-Line-Anwendung geschrieben. Sie ist Nutzbar, wenn die [app.py](03_SmartHome/src/app.py) Datei im SMART-Home src Ordner ausgeführt wird. Eine Speicherung der eingebenen Daten erfolgt nicht. 

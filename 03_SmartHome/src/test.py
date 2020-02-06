@@ -8,6 +8,7 @@ from device.smartDevice.entertainment.smartTV import SmartTV
 from device.smartDevice.kitchen.oven import Oven
 from device.smartDevice.kitchen.fridge import Fridge
 from device.sensor.smokeSensor import SmokeSensor
+from routinesAndCommands.routine import Routine
 
 if __name__ == "__main__":
     ## Create SMART HOME
@@ -79,6 +80,17 @@ if __name__ == "__main__":
     time.sleep(3)
     smokeSensor.dispatch()
 
+    print("#######################################")
+    print("Creating routine for bedroom to shut down lamps...")
+    time.sleep(3)
+    routine = Routine("Schlafzimmerroutine")
+    routine.addCommand(lampBed.getCommands()[1])
+    print("Routine created....")
+    print("Executing routine.....")
+    time.sleep(3)
+    routine.executeCommands()
+
+    print("#######################################")
     # Deregister Device from Sensor
     print("Unregister oven to smoke sensor")
     smokeSensor.unregister(oven)
