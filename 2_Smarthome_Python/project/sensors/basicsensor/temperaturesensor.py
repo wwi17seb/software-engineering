@@ -8,6 +8,7 @@ class TemperatureSensor(ISensor,ITarget):
         ISensor.__init__(self,"Temperatursensor","Celsius",room)
         ITarget.__init__(self)
         self.observable = heatingObservable()
+        self.setState(18)
 
     def setState(self,state):
         self.state=state
@@ -15,4 +16,4 @@ class TemperatureSensor(ISensor,ITarget):
 
 
     def measurement(self):
-        self.setState(22)
+        self.setState(self.getData())

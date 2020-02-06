@@ -9,4 +9,4 @@ class LightSensor(ISensor,ITarget):
         self.setTarget(80)
 
     def measurement(self):
-        self.setState(80)
+        self.setState(self.getData())
