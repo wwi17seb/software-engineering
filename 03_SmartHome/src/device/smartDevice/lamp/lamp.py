@@ -12,7 +12,7 @@ class Lamp(SmartDevice):
         self.__maxTemp = 40
         self.__sensor = TemperatureSensor(name, description, None, None, 1, self.__maxTemp)
         self.__sensor.register(self, self.update)
-        self.__commands = {turnOn(self), turnOff(self)}
+        self.__commands = [turnOn(self), turnOff(self)]
         self.__sensor.turnOff()
 
     def collectData(self):
@@ -41,3 +41,5 @@ class Lamp(SmartDevice):
     def __changeBrightness(self, brightness):
         self.__brightness = brightness
 
+    def getCommands(self):
+        return self.__commands
