@@ -11,6 +11,5 @@ Praktizieren Sie TDD, nutzen sie dazu den docstring-Mechanismus (wie KW 48 Folie
  
 Stellen sie einen Bezug zu den in ihrer Gruppe bearbeiteten Design Patterns her, indem sie zwischen ihrem Code und ihren Präsentationen Verweise angeben und zur Veranschaulichung UML-Diagramme erstellen. Das gilt natürlich auch für verwendete Design Patterns, falls sie in einer anderen Gruppe vorgestellt wurden (Bsp. Gruppe 2 nutzt Command-Pattern - was von Gruppe 1 vorgestellt wurde). Erklären sie exemplarisch an Code-Beispielen die Aspekte Kopplung und Bindung.
  
-** Module sind in Python Dateien (mit der Endung .py), die Code (Klassen, Funktionen) enthalten. Packages sind in Python Verzeichnisse, die mehrere Module (Dateien) enthalten können. Erkannt wird ein Verzeichnis als Package, falls es eine Datei __init__.py enthält (diese wird beim Laden des Package ausgeführt), siehe https://docs.python.org/3/tutorial/modules.html
- 
-~ Binzen
+** Module sind in Python Dateien (mit der Endung .py), die Code (Klassen, Funktionen) enthalten. Packages sind in Python Verzeichnisse, die mehrere Module (Dateien) enthalten können. Erkannt wird ein Verzeichnis als Package, falls es eine Datei \_\_init\_\_.py enthält (diese wird beim Laden des Package ausgeführt), siehe https://docs.python.org/3/tutorial/modules.html
+
