@@ -63,18 +63,19 @@ This includes also the information which sensor invoked the method and what it's
 ## Remarks and Ideas
 
 **REMARK**:
-Sensors and actuators currently have bad metrics, because they are not abstract, but are stable. Because of this further improvements to the smarthome system have to include the refactoring of those classes. We recommend changing all current sensors and actuators into abstract classes which are used by classes more accurate representations of real items. A good example is the `microphone`. We opted to use it as our concrete implementation, but after calculation the metrics we came to the conclusion you should use microphone as a superclass and implement subclasses like `amazon-echo-input`.
+Sensors and actuators currently have bad metrics, because they are not abstract, but are stable. Because of this further improvements to the smarthome system have to include the refactoring of those classes. We recommend changing all current sensors and actuators into abstract classes which are used by classes more accurate representations of real items. A good example is the `Microphone`. We opted to use it as our concrete implementation, but after calculating the metrics we came to the conclusion you should use `Microphone` as a superclass and implement subclasses like `amazon-echo-input`.
+So in general this means: The abstract class `Sensor` defines the general interface for all sensors. Special classes for different types of sensors (temperature, light, motion, ...) extend this interface if needed or implement general logic for this types of devices. These have subclasses which then implement some details for a certain device (this means a physical device from a certain vendor and thus a certain hardware interface) like `readValue()` or `parseValue()`. They do not extend the interface so that clients can use the interface of the more general sensors(-types) (Narrowing Cast).
 
 **QUESTION**:
 Should `Controller`'s behave as a `Proxy` for `Actuator`'s so that every `Actuator` has only one `Controller` through which it can be controlled.
-This would mean that e.g. `Voice Controller` would need to access `Controller`'s instead of `Actuator`'s directly.
+This would mean that e.g. `VoiceController` would need to access `Controller`'s instead of `Actuator`'s directly.
 
 **IDEA**:
 Use just one `FireAlertController` (`Singleton`?) which receives the whole `SmartHome` as an argument and can then take values of all `Sensor`'s it needs (`SmokeDetector`, `TemperatureSensor`, ...).
 This could make it easier to implement new features for `FireAlertController` in the future.
 
 **IDEA**:
-The `house` can be expanded by `floors` or other `house` related entities. This way specialized `rooms` like a `garage` can have their own classes and still be part of the `house`-package.
+The `house` can be expanded by `floors` or other `house`-related entities. This way specialized `rooms` like a `garage` can have their own classes and still be part of the `house`-package.
 
 **REMARK**:
-The `VoiceAssistant` is currently part of the `kitchen`-package, because it's implemented that way and only works for `items` inside the `room` _kitchen_. In case the `VoiceAssistant` gets new functionality that doesn't concearn the kitchen it has to have it's own `assistant`-package. (Why is it not in that package already? We love agile developement and want our code to be as easy to understand as possible. Because of this we decided to limit the `VoiceAssistant` to only be responsible for controlling `items` in this specialized room. We have given some thought to the bigger picture already, but we argue that implementing things only serving a purpose in the future can be considered to be part of a waterfall approach and only complicate the code.)
+The `VoiceAssistant` is currently part of the `kitchen`-package, because it's implemented that way and only works for items inside the room _kitchen_. In case the `VoiceAssistant` gets new functionality that doesn't concern the kitchen it has to have it's own `assistant`-package. (Why is it not in that package already? We love agile developement and want our code to be as easy to understand as possible. Because of this we decided to limit the `VoiceAssistant` to only be responsible for controlling items in this specialized room. We have given some thought to the bigger picture already, but we argue that implementing things only serving a purpose in the future can be considered to be part of a waterfall approach and only complicate the code.)
