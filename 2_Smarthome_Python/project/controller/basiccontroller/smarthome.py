@@ -58,9 +58,11 @@ class Smarthome(IController):
     def addRoom(self,name):
         if self.findRoomByName(name) == 1:
             print("Raum schon vorhanden")
+            return 0
         else:
             self.rooms.append(Room(name,self))
             print("Neuen Raum hinzugefügt: ",self.rooms[-1].id)
+            return 1
 
     def printAllRooms(self):
         print("\nAlle existierenden Räume:")

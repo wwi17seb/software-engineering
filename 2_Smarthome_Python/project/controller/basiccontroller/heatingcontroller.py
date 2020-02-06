@@ -16,7 +16,7 @@ class HeatingController(IController):
         if self.state==1:
             if room.hsensor != None:
                 room.hsensor.measurement()
-            
+
                 print("Der Raum: ",room.name," hat aktuell ",room.hsensor.getData(), " Grad Celsius")
                 if target > room.hsensor.getData():
                     available=0
@@ -29,6 +29,7 @@ class HeatingController(IController):
                         ventilationcontroller.stopVentilateRoom(room)
                 else:
                     print("Die Zieltemperatur liegt unter der Raumtemperatur.")
+                    room.hsensor.setTarget(target)
                     self.stopHeatRoom(room)
             else:
                 print("Keine Heizung in " + room.name + " verfügbar.")
