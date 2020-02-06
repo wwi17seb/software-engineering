@@ -55,5 +55,9 @@
 *  hier hat sich für unser Beispiel kein Pattern geeignet
 
 ## Behavioral patterns
-* Observer --> wurde genutzt um ein "heatingobservable" zu erstellen. Gibt weiter sobald die Zieltemperatur erreicht ist.
-* Template Method --> Die abstrakte IConstroller Klasse bietet die Template Method (z.b. powerOn()) welche von den konkreten Controllern genutzt/implementiert wird
+* Observer 
+  * von Gruppe 3 vorgestellt
+  * wurde genutzt um ein "heatingobservable" zu erstellen. Gibt weiter sobald die Zieltemperatur erreicht ist.
+* Template Method 
+  * von Gruppe 4 (uns) vorgestellt
+  * Die abstrakte IConstroller Klasse bietet die Template Method (z.b. powerOn()) welche von den konkreten Controllern genutzt/implementiert wird
