@@ -11,4 +11,4 @@
   - Iterator ([Slides](./03_design_patterns/iterator/presentations/Iterator-Pattern.pdf) | [Source Code](./03_design_patterns/iterator/src/))
   - State ([Slides](./03_design_patterns/state/presentations/State%20Pattern.pdf) | [Source Code](./03_design_patterns/state/src/))
 - Reverse Presentation ([Slides](./04_reverse_presentation/making_architecture_matter.pdf))
-- Coupling & Binding ([Documentation](./05_coupling_cohesion/README.md))
+- Coupling & Cohesion ([Documentation](./05_coupling_cohesion/README.md))
