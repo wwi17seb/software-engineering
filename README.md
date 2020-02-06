@@ -66,20 +66,27 @@
 
 ### Stable Abstractions Principle (SAP)
 - Beschreibung: Fordert, dass die Abstraktheit eines Moduls direkt proportional zu seiner Stabilität sein muss
-- Verwendung: erfüllt, da aufgrund der Klassenhierarchie die abstrakten Klassen von den 
+- Verwendung: erfüllt, da aufgrund der Klassenhierarchie die abstrakten Klassen (gerät.py, gegenstand.py und sensor.py) von den anderen, spezifizierten Klassen abhängen. 
+Siehe Bild: 
+
+## Design Patterns
+
+### Erzeugungsmuster
+Factory Method:
+- Beschreibung: Das Muster beschreibt, wie ein Objekt durch Aufruf einer Methode anstatt durch direkten Aufruf eines Konstruktors erzeugt wird
+- Verwendung: Erfüllt, siehe [Coding](./03_DesignPattern_FactoryMethod/Codebeispiel_FactoryMethod.py) 
+
+### Strukturmuster
+Decorator:
+- Beschreibung: Das Muster ist eine flexible Alternative zur Unterklassenbildung, um eine Klasse um zusätzliche Funktionalitäten zu erweitern
+- Verwendung: Erfüllt, siehe [Coding](./02_SmartHome/smarthome-python/decorator.py) 
 
 
-## Erzeugungsmuster
-
-
-## Verhaltensmuster
-
-
-## UML-Klassendiagramm für dasProjekt Smarthome
+## UML-Klassendiagramm für das Projekt Smarthome
 - Beschreibung: Ein Klassendiagramm ist ein Strukturdiagramm der Unified Modeling Language zur grafischen Darstellung von Klassen, Schnittstellen sowie deren Beziehungen. Eine Klasse ist in der Objektorientierung ein abstrakter Oberbegriff für die Beschreibung der gemeinsamen Struktur und des gemeinsamen Verhaltens von Objekten.
 - Verwendung: [Klassendiagramm](./02_SmartHome/smarthome-python/UML%20smarthome.pdf)
 
 ## Doctest: Test für das Smarthome-Projekt
 
 - Beschreibung: Doctest ist ein in der Standardbibliothek der Programmiersprache Python enthaltenes Modul, das die einfache Generierung von Tests auf der Grundlage der Ausgabe der Standard-Python-Interpreter-Shell ermöglicht, die durch Ausschneiden und Einfügen in Dokstrings erstellt wird-
-- Die Klassen werden einzeln durch in Textdateien ausgelagerte Testskripte getestet (Testklasse: [tests.py](/02_SmartHome/smarthome-python/tests.py)). Alle Tests kann man im Terminal mit `python tests.py -v` starten (Hierbei werden alle Tests veranschaulicht, die im Rahmen des Projekts entworfen wurden)
+- Die Klassen werden einzeln durch in Textdateien ausgelagerte Testskripte getestet (Testklasse: [test.py](/02_SmartHome/smarthome-python/tests.py)). Alle Tests kann man im Terminal mit `python tests.py -v` starten (Hierbei werden alle Tests veranschaulicht, die im Rahmen des Projekts entworfen wurden)
