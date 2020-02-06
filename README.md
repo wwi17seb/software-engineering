@@ -18,22 +18,18 @@
 
 ### 1. Single-Responsibility-Prinzip (SRP)
 - Beschreibung: Jede Klasse oder jedes Modul solltein einem Programm nur für einen einzigen Teil der Funktionalität dieses Programms verantwortlich sein 
-- Vorstellung: Gruppe 2
 - Verwendung: Erfüllt, besonders in Klasse Raum (Gemäß SRP hat diese Klasse nur die Verantwortung die Raumfunktionalität zu realisieren) und Klasse Netzwerk (Gemäß SRP hat diese Klasse nur die Verantwortung die Netzwerkfunktionalität zu realisieren) (Die aufgeführten Klassen sind Beispiele dafür, dass sie nur eine bestimmte Aufgabe absolvieren: Raum- und Netzwerkfunktionalität)
 
 ### 2. Open Closed Principle (ORP)
 - Beschreibung: Erweiterbarkeit von bestehender Software
-- Vorstellung: Gruppe 5
 - Verwendung: Erfüllt, da fast alle Klassen erweitert und spezifiziert wurden
 
 ### 3. Loskov Substitution Principle (LSP)
 - Beschreibung: Objekte einer Oberklasse durch Objekte ihrer Unterklassen ersetzt werden können, ohne die Anwendung zu zerstören
-- Vorstellung: Gruppe 4
 - Verwendung: Erfüllt (Beispiele: Klassen Feuermelder, Bewegungssensor, Temperatursensor leiten von der Oberklasse Sensor ab; Lautsprecher, Heizung und Beleuchtung leiten von der Oberklasse Geräte ab)
 
 ### 4. Interface Segregation Principle (ISP)
 - Beschreibung: Zu große Schnittstellen werden in mehrere Schnittstellen aufgeteilt, falls implementierende Klassen unnötige Methoden haben müssen
-- Vorstellung: Gruppe 3 ([unsere Slides](./01_SOLID-Prinzipien/SOLID-Prinzipien_ISP.pdf))
 - Verwendung: Erstellung von Interfaces (siehe beispielsweise Klasse Gegenstand; Kennzeichnung mit abc siehe Code)
 
 
@@ -67,7 +63,6 @@
 ### Stable Abstractions Principle (SAP)
 - Beschreibung: Fordert, dass die Abstraktheit eines Moduls direkt proportional zu seiner Stabilität sein muss
 - Verwendung: erfüllt, da aufgrund der Klassenhierarchie die abstrakten Klassen (gerät.py, gegenstand.py und sensor.py) von den anderen, spezifizierten Klassen abhängen. 
-Siehe Bild: 
 
 ## Design Patterns
 
