@@ -6,7 +6,7 @@
 
 - Solid Prinzip
   - Interface Segregation Principle ([Slides](./01_SOLID-Prinzipien/SOLID-Prinzipien_ISP.pdf) | Source Code in der Powerpoint)
-- Smart Home ([Source Code](./02_SmartHome/smarthome-python) |[UML-Diagramm Designphase](./02_SmartHome/UML-SmartHome.pdf) [Implementation](./02_SmartHome/smarthome-python/UML%20smarthome.pdf))
+- Smart Home ([Source Code](./02_SmartHome/smarthome-python) |UML-Diagramm [Designphase](./02_SmartHome/UML-SmartHome.pdf) und  [Implementation](./02_SmartHome/smarthome-python/UML%20smarthome.pdf))
 - Design Patterns
   - Factory Method ([Slides](./03_design_patterns/builder/presentations/builder.pdf) | [Source Code](./03_DesignPattern_FactoryMethod/Codebeispiel_FactoryMethod.py))
   - Decorator ([Slides](./05_DesignPattern_Decorator/Design_Pattern_Decorator.pdf) | [Source Code](./05_DesignPattern_Decorator/decorator.py))
