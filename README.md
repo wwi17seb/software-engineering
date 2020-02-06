@@ -65,6 +65,8 @@ Neben den hier aufgezählten Prinzipien sind die vorgestellten Prinzipien und Mu
 
 ![Alt text](03_SmartHome/design/Metriken.svg)
 
+## Klassendiagramm
+
 ![Alt text](03_SmartHome/design/UML_Diagramm_SmartHome.svg)
 
 ## Tests für das SMART HOME
