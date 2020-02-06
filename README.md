@@ -47,4 +47,4 @@
 ## Doctest: Test für das Smarthome-Projekt
 
 - Beschreibung: Doctest ist ein in der Standardbibliothek der Programmiersprache Python enthaltenes Modul, das die einfache Generierung von Tests auf der Grundlage der Ausgabe der Standard-Python-Interpreter-Shell ermöglicht, die durch Ausschneiden und Einfügen in Dokstrings erstellt wird-
-- Die Klassen werden einzeln durch in Textdateien ausgelagerte Testskripte getestet. Alle Tests kann man im Terminal mit `python tests.py -v` starten (Hierbei werden alle Tests veranschaulicht, die im Rahmen des Projekts entworfen wurden)
+- Die Klassen werden einzeln durch in Textdateien ausgelagerte Testskripte getestet (Testklasse: [test.py](./02_SmartHome/U02_SmartHome/smarthome-python/tests.py)). Alle Tests kann man im Terminal mit `python tests.py -v` starten (Hierbei werden alle Tests veranschaulicht, die im Rahmen des Projekts entworfen wurden)
