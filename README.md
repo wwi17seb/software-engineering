@@ -33,7 +33,7 @@
 
 ### 4. Interface Segregation Principle (ISP):
 - Beschreibung: Zu große Schnittstellen werden in mehrere Schnittstellen aufgeteilt, falls implementierende Klassen unnötige Methoden haben müssen
-- Vorstellung: Gruppe 4
+- Vorstellung: Gruppe 3 ([unsere Slides](./01_SOLID-Prinzipien/SOLID-Prinzipien_ISP.pdf))
 - Verwendung: Erstellung von Interfaces (siehe beispielsweise klasse gegenstand.py; Kennzeichnung mit abc siehe Code)
 
 
