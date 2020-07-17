@@ -1,0 +1,17 @@
+The ``root`` module
+======================
+
+Using ``Feuermelder``
+-------------------
+    >>> import steuerzentrale, raum, haus
+    >>> from geräte import lautsprecher
+    >>> from sensoren import feuermelder
+    >>> hub = steuerzentrale.Steuerzentrale()
+    >>> heim = haus.Haus("HomeSweetHome", 330)
+    >>> zimmer = raum.Raum ("Wohnzimmer", 2.30, heim)
+    >>> sirene = lautsprecher.Lautsprecher(zimmer, "Alarm", hub)
+    >>> f_sensor = feuermelder.Feuermelder(sirene, sirene.standort, "Smoke Detector", sirene.steuerzentrale)
+    >>> f_sensor.messen()
+    True
+    >>> f_sensor.feuerÜberwachen()
+    Feuer wurde erkannt!!!

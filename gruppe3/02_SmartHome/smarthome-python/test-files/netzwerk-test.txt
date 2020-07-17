@@ -1,0 +1,26 @@
+The ``root`` module
+======================
+
+Using ``Netzwerk``
+-------------------
+    >>> from netzwerk import Netzwerk
+    >>> netzwerk = Netzwerk('myWifi','testPassword','ip: 192.168.0.111')
+    >>> print(netzwerk.name)
+    myWifi
+    >>> print(netzwerk.zugangsdaten)
+    testPassword
+    >>> print(netzwerk.netzwerkSettings)
+    ip: 192.168.0.111
+    >>> print(netzwerk.sichtbar)
+    False
+    >>> netzwerk.oeffentlichStellen()
+    >>> print(netzwerk.sichtbar)
+    True
+    >>> netzwerk.privatStellen()
+    >>> print(netzwerk.sichtbar)
+    False
+    >>> from steuerzentrale import Steuerzentrale
+    >>> controlUnit = Steuerzentrale()
+    >>> netzwerk.verbindeSteuerzentrale(controlUnit)
+    >>> print(netzwerk.steuerzentralen[0].name)
+    Hauszentrale

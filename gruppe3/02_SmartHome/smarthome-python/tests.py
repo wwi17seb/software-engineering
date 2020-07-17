@@ -1,0 +1,12 @@
+import doctest
+doctest.testfile("test-files/beleuchtung-test.txt")
+doctest.testfile("test-files/gegenstand-test.txt")
+doctest.testfile("test-files/netzwerk-test.txt")
+doctest.testfile("test-files/heizung-test.txt")
+doctest.testfile("test-files/lautsprecher-test.txt")
+doctest.testfile("test-files/automation-test.txt")
+doctest.testfile("test-files/haus-test.txt")
+doctest.testfile("test-files/bewegungssensor-test.txt")
+doctest.testfile("test-files/feuermelder-test.txt")
+doctest.testfile("test-files/schalter-test.txt")
+doctest.testfile("test-files/temperatursensor-test.txt")

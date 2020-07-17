@@ -1,0 +1,25 @@
+The ``root`` module
+======================
+
+Using ``Automation``
+-------------------
+
+    >>> import automation, steuerzentrale, raum, haus
+    >>> from geräte import beleuchtung
+    >>> from sensoren import bewegungssensor, schalter
+    >>> hub = steuerzentrale.Steuerzentrale()
+    >>> heim = haus.Haus("HomeSweetHome", 330)
+    >>> zimmer = raum.Raum ("Wohnzimmer", 2.30, heim)
+    >>> lampe1 = beleuchtung.Beleuchtung(zimmer, "Stehlampe", hub)
+    >>> m_sensor = bewegungssensor.Bewegungssensor(lampe1, lampe1.standort, "Motion Sensor", lampe1.steuerzentrale)
+    >>> szene = automation.Automation(m_sensor, lampe1, "an/aus")
+    >>> print (szene.typ)
+    an/aus
+    >>> szene.ausführen()
+    Automation ausgelöst von Motion Sensor: 
+    Stehlampe ist an
+    Licht ist an
+    >>> lampe2 = beleuchtung.Beleuchtung(zimmer, "Zweitlampe", hub)
+    >>> switch = schalter.Schalter(lampe1, "Switch")
+    >>> szene.bearbeiten (switch, lampe2)
+    ['Stehlampe', 'Zweitlampe']

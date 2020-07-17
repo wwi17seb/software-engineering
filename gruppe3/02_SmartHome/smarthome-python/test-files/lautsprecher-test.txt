@@ -1,0 +1,29 @@
+The ``Geräte`` package
+======================
+
+Using ``Lautsprecher``
+----------------------
+
+    >>> from geräte.lautsprecher import Lautsprecher
+    >>> from raum import Raum
+    >>> from steuerzentrale import Steuerzentrale
+    >>> from haus import Haus
+    >>> myHouse = Haus("MyHouse",120)
+    >>> room1 = Raum("Küche",2.5,myHouse)
+    >>> controlUnit = Steuerzentrale()
+    >>> lautsprecher1 = Lautsprecher(room1, 'test-lautsprecher', controlUnit)
+    >>> lautsprecher1.setState(10)
+    >>> print(lautsprecher1.zustand)
+    10
+    >>> lautsprecher1.lautstaerkeErhoehen()
+    Lautstärke bei 15
+    >>> lautsprecher1.lautstaerkeSenken()
+    Lautstärke bei 10
+    >>> lautsprecher1.ausschalten()
+    test-lautsprecher ist aus
+    >>> lautsprecher1.anschalten()
+    test-lautsprecher ist an
+    >>> lautsprecher1.verbinden()
+    test-lautsprecher wurde zum System Hauszentrale hinzugefügt.
+
+

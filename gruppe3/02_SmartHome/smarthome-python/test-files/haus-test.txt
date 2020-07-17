@@ -1,0 +1,12 @@
+The ``root`` module
+======================
+
+Using ``Haus``
+-------------------
+    >>> import haus
+    >>> _haus = haus.Haus('myHouse',44)
+    >>> print(_haus.flaeche)
+    44
+    >>> _haus = haus.Haus('myHouse',44)
+    >>> print(_haus.name)
+    myHouse
