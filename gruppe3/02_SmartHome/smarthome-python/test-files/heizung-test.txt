@@ -1,0 +1,24 @@
+The ``Geräte`` package
+======================
+
+Using ``Heizung``
+-------------------
+
+    >>> from geräte.heizung import Heizung
+    >>> from raum import Raum
+    >>> from steuerzentrale import Steuerzentrale
+    >>> from haus import Haus
+    >>> myHouse = Haus("MyHouse",120)
+    >>> room1 = Raum("Küche",2.5,myHouse)
+    >>> controlUnit = Steuerzentrale()
+    >>> heizung1 = Heizung(room1, myHouse, controlUnit)
+    >>> heizung1.setState(0)
+    >>> print(heizung1.zustand)
+    0
+    >>> heizung1.setState(20)
+    >>> print(heizung1.zustand)
+    20
+    >>> heizung1.heizungAufdrehen()
+    Hmmm...Heizung wurde auf 25 gedreht
+    >>> heizung1.heizungZudrehen()
+    Brrr...Heizung wurde auf 20 gedreht

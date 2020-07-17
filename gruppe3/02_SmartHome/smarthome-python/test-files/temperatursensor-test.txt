@@ -1,0 +1,18 @@
+The ``root`` module
+======================
+
+Using ``Temperatursensor``
+-------------------
+    >>> import steuerzentrale, raum, haus, automation
+    >>> from geräte import heizung
+    >>> from sensoren import temperatursensor
+    >>> hub = steuerzentrale.Steuerzentrale()
+    >>> heim = haus.Haus("HomeSweetHome", 330)
+    >>> zimmer = raum.Raum ("Wohnzimmer", 2.30, heim)
+    >>> heizer = heizung.Heizung(zimmer, "Heater", hub)
+    >>> t_sensor = temperatursensor.Temperatursensor(heizer, heizer.standort, "Temp Sensor", heizer.steuerzentrale)
+    >>> t_sensor.messen()
+    23.1
+    >>> t_sensor.automationZuordnen(automation.Automation(t_sensor, heizer, "an/aus"))
+    >>> t_sensor.automation.typ
+    'an/aus'

@@ -1,0 +1,33 @@
+The ``root`` package
+======================
+
+Using ``Beleuchtung``
+-------------------
+    
+    >>> from geräte.beleuchtung import Beleuchtung
+    >>> from raum import Raum
+    >>> from steuerzentrale import Steuerzentrale
+    >>> from haus import Haus
+    >>> myHouse = Haus("MyHouse",120)
+    >>> room1 = Raum("Küche",2.5,myHouse)
+    >>> controlUnit = Steuerzentrale()
+    >>> lampe1 = Beleuchtung(room1,'test-lampe',controlUnit)
+    >>> lampe1.setHelligkeit(101)
+    Der Wert ist ungültig!
+    >>> lampe1.setHelligkeit(40)
+
+    >>> lampe1.helligkeitErhöhen()
+
+    >>> lampe1.setHelligkeit(100)
+    >>> lampe1.helligkeitErhöhen()
+    Lampe bereits maximal hell!
+    >>> lampe1.setHelligkeit(0)
+    >>> lampe1.helligkeitVerringern()
+    Lampe bereits maximal dunkel!
+    >>> lampe1.anschalten()
+    test-lampe ist an
+    Licht ist an
+    >>> lampe1.ausschalten()
+    test-lampe ist aus
+    Licht ist aus
+    
