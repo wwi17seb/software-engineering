@@ -1,26 +1,19 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Gruppen
 * [Gruppe 1](https://github.com/WWI17SEB/software-engineering/tree/gruppe1)
 * [Gruppe 2](https://github.com/WWI17SEB/software-engineering/tree/gruppe2)
 * [Gruppe 3](https://github.com/WWI17SEB/software-engineering/tree/gruppe3)
 * [Gruppe 4](https://github.com/WWI17SEB/software-engineering/tree/gruppe4)
 * [Gruppe 5](https://github.com/WWI17SEB/software-engineering/tree/gruppe5) (später auf andere Gruppen verteilt)
+=======
+# Gruppe 2
+>>>>>>> gruppe2
 
-# SOLID-Prinzipien
-* [Single Responsibility Principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/01_srp/presentations/SRP%20-%20The%20Single%20Responsibility%20Principle.pdf)
-* [Open–Closed Principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe5/Open-closed%20Principle.pdf)
-* [Liskov Substitution Principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/LSP.pdf)
-* [Interface Segregation Principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/01_SOLID-Prinzipien/SOLID-Prinzipien_ISP.pdf)
-* [Dependency Inversion Principle](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/01_DIP/DIP.pptx)
 
-# Design Patterns
-## Creational patterns
-* [Abstract Factory](https://github.com/WWI17SEB/software-engineering/blob/gruppe1/02_Abstract_Factory/AbstractFactory.pptx)
-* [Builder](https://github.com/WWI17SEB/software-engineering/blob/gruppe2/03_design_patterns/builder/presentations/builder.pdf)
-* [Factory Method](https://github.com/WWI17SEB/software-engineering/blob/gruppe3/03_DesignPattern_FactoryMethod/DesignPattern_FactoryMethod.pdf)
-* [Prototype](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/Prototype%20Design%20Pattern/Prototype%20Design%20Pattern.pdf)
-* Singleton
+## Presentations and Documentation
 
+<<<<<<< HEAD
 ## Structural patterns
 * Adapter
 * [Bridge](https://github.com/WWI17SEB/software-engineering/blob/gruppe4/1_Pr%C3%A4sentationen/Bridge%20Pattern/Bridge%20Pattern.pdf)
@@ -123,3 +116,14 @@ Weiterhin wurde eine Datei [test.py](03_SmartHome/src/test.py) angelegt, welche 
 ## CLI
 Das SMART-Home wurde als Command-Line-Anwendung geschrieben. Sie ist Nutzbar, wenn die [app.py](03_SmartHome/src/app.py) Datei im SMART-Home src Ordner ausgeführt wird. Eine Speicherung der eingebenen Daten erfolgt nicht. 
 >>>>>>> gruppe1
+=======
+- Single Responsibility Principle ([Slides](./01_srp/presentations/SRP%20-%20The%20Single%20Responsibility%20Principle.pdf) | [Source Code](./01_srp/src))
+- Smart Home ([Documentation](./02_smart_home/src/README.md) | [Source Code](./02_smart_home/src/))
+- Design Patterns
+  - Builder ([Slides](./03_design_patterns/builder/presentations/builder.pdf) | [Source Code](./03_design_patterns/builder/src/))
+  - Flyweight ([Slides](./03_design_patterns/flyweight/presentations/Flyweight-Pattern.pdf) | [Source Code](./03_design_patterns/flyweight/src/))
+  - Iterator ([Slides](./03_design_patterns/iterator/presentations/Iterator-Pattern.pdf) | [Source Code](./03_design_patterns/iterator/src/))
+  - State ([Slides](./03_design_patterns/state/presentations/State%20Pattern.pdf) | [Source Code](./03_design_patterns/state/src/))
+- Reverse Presentation ([Slides](./04_reverse_presentation/making_architecture_matter.pdf))
+- Coupling & Cohesion ([Documentation](./05_coupling_cohesion/README.md))
+>>>>>>> gruppe2
